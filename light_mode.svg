@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1434" viewBox="0 0 800 1434">
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1514" viewBox="0 0 800 1514">
 <style>
 @font-face {
     src: local('Consolas'), local('Monaco'), local('Menlo');
@@ -21,7 +21,7 @@ text {
 .yellow { fill: #d97706; }
 .redact { fill: #1f2328; }
 </style>
-<rect width="800" height="1434" fill="#f6f8fa" rx="10"/>
+<rect width="800" height="1514" fill="#f6f8fa" rx="10"/>
 <text x="785" y="12" text-anchor="end" class="gray" font-size="11">6/2/26</text>
 <text x="400" y="30" text-anchor="middle" class="yellow">                         ####################                         </text>
 <text x="400" y="44" text-anchor="middle" class="yellow">                     #########+++++++++++#########                    </text>
@@ -101,11 +101,22 @@ text {
 <text x="22.0" y="1184" class="gray">Exodus ................................... Large-scale </text>
 <text x="484.0" y="1184" class="redact">████████</text>
 <text x="551.2" y="1184" class="gray"> migration across platforms</text>
-<text x="400" y="1224" text-anchor="middle" class="green">[ PUBLIC ] ............................................................... open source</text>
-<text x="400" y="1254" text-anchor="middle" class="gray">Dry Dock ..................................... Container update monitoring · 23 registries</text>
-<text x="400" y="1274" text-anchor="middle" class="text">  github.com/CodesWhat/drydock</text>
-<text x="400" y="1304" text-anchor="middle" class="gray">Portkey Admin MCP ...................................... Full Portkey Admin API MCP server</text>
-<text x="400" y="1324" text-anchor="middle" class="text">  github.com/s-b-e-n-s-o-n/portkey-admin-mcp</text>
-<text x="400" y="1354" text-anchor="middle" class="gray">Sock Guard ......................................... Default-deny Docker socket proxy · Go</text>
-<text x="400" y="1374" text-anchor="middle" class="text">  github.com/CodesWhat/sockguard</text>
+<text x="22.0" y="1204" class="gray">Oracle ...................................... Company-wide AI assistant for </text>
+<text x="660.4" y="1204" class="redact">████████</text>
+<text x="727.6" y="1204" class="gray"> teams</text>
+<text x="22.0" y="1224" class="gray">Relay .................................... Internal </text>
+<text x="458.8" y="1224" class="redact">████████</text>
+<text x="526.0" y="1224" class="gray"> tracking &amp; approvals platform</text>
+<text x="22.0" y="1244" class="gray">Tempo ................................. AI timesheet automation syncing </text>
+<text x="626.8000000000001" y="1244" class="redact">████████</text>
+<text x="694.0000000000001" y="1244" class="gray"> via Slack</text>
+<text x="22.0" y="1264" class="gray">Atlas ............................................ AI-assisted knowledge base for </text>
+<text x="710.8000000000001" y="1264" class="redact">████████</text>
+<text x="400" y="1304" text-anchor="middle" class="green">[ PUBLIC ] ............................................................... open source</text>
+<text x="400" y="1334" text-anchor="middle" class="gray">Dry Dock ..................................... Container update monitoring · 23 registries</text>
+<text x="400" y="1354" text-anchor="middle" class="text">  github.com/CodesWhat/drydock</text>
+<text x="400" y="1384" text-anchor="middle" class="gray">Portkey Admin MCP ...................................... Full Portkey Admin API MCP server</text>
+<text x="400" y="1404" text-anchor="middle" class="text">  github.com/s-b-e-n-s-o-n/portkey-admin-mcp</text>
+<text x="400" y="1434" text-anchor="middle" class="gray">Sock Guard ......................................... Default-deny Docker socket proxy · Go</text>
+<text x="400" y="1454" text-anchor="middle" class="text">  github.com/CodesWhat/sockguard</text>
 </svg>

@@ -19,7 +19,10 @@ else
     echo "$(date): Changes detected, committing..."
     git add dark_mode.svg light_mode.svg cache/
     git commit -m "Update stats $(date '+%Y-%m-%d')"
-    git pull --rebase origin main
+    # Conflict-proof sync: merge origin keeping our freshly-generated files.
+    # Avoids the rebase-strand that froze pushes (and the token count) for ~2 months.
+    git fetch origin
+    git merge -X ours --no-edit origin/main
     git push origin main
     echo "$(date): Pushed to GitHub"
 fi

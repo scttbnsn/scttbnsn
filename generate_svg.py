@@ -205,6 +205,10 @@ def generate_svg(mode="dark", claude=None, github=None):
         ("Beacon", f"Intelligence platform surfacing {redact} insights"),
         ("Meridian", f"Client relationship dashboard for {redact}"),
         ("Exodus", f"Large-scale {redact} migration across platforms"),
+        ("Oracle", f"Company-wide AI assistant for {redact} teams"),
+        ("Relay", f"Internal {redact} tracking & approvals platform"),
+        ("Tempo", f"AI timesheet automation syncing {redact} via Slack"),
+        ("Atlas", f"AI-assisted knowledge base for {redact}"),
     ]
     for name, desc in area51_projects:
         lines.append((project_line(name, desc), "project_redact", "normal"))
