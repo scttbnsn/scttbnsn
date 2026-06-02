@@ -227,6 +227,11 @@ def generate_svg(mode="dark", claude=None, github=None):
 
     lines.append(("", "text", "blank"))
 
+    lines.append((project_line("Sock Guard", "Default-deny Docker socket proxy · Go"), "gray", "normal"))
+    lines.append(("  github.com/CodesWhat/sockguard", "text", "normal"))
+
+    lines.append(("", "text", "blank"))
+
     # Date stamp rendered separately in top-right corner
     now = datetime.now()
     date_stamp = f"{now.month}/{now.day}/{now.strftime('%y')}"
