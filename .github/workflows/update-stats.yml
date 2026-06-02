@@ -9,6 +9,11 @@ on:
 permissions:
   contents: write
 
+# Serialize runs so two Action invocations never overlap and race each other.
+concurrency:
+  group: update-stats
+  cancel-in-progress: false
+
 jobs:
   update:
     runs-on: ubuntu-latest
@@ -16,6 +21,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+        with:
+          fetch-depth: 0  # full history so the sync merge can always find a merge-base
 
       - name: Set up Python
         uses: actions/setup-python@v6
@@ -33,9 +40,19 @@ jobs:
 
       - name: Commit and push
         run: |
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git config core.autocrlf false
           git add dark_mode.svg light_mode.svg cache/
-          git diff --staged --quiet || git commit -m "Update profile stats"
-          git pull --rebase origin main
-          git push
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "Update profile stats"
+          # Shared robust sync (scripts/lib-git-sync.sh): self-heal any stranded state,
+          # then merge + push with retry. -X theirs => defer to origin, since the local
+          # writers carry the real Claude token count this runner cannot compute and the
+          # Action must never regress it with stale cache-derived values.
+          . scripts/lib-git-sync.sh
+          git_selfheal
+          git_sync_push theirs main

@@ -1,0 +1,3 @@
+# Normalize line endings so generated files (SVG/JSON) never churn or spuriously
+# conflict between the macOS laptop writers and the Linux GitHub Actions runner.
+* text=auto eol=lf
