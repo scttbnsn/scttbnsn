@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1514" viewBox="0 0 800 1514">
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1542" viewBox="0 0 800 1542">
 <style>
 @font-face {
     src: local('Consolas'), local('Monaco'), local('Menlo');
@@ -21,102 +21,104 @@ text {
 .yellow { fill: #fbbf24; }
 .redact { fill: #c9d1d9; }
 </style>
-<rect width="800" height="1514" fill="#0d1117" rx="10"/>
+<rect width="800" height="1542" fill="#0d1117" rx="10"/>
 <text x="785" y="12" text-anchor="end" class="gray" font-size="11">6/5/26</text>
-<text x="400" y="30" text-anchor="middle" class="yellow">                         ####################                         </text>
-<text x="400" y="44" text-anchor="middle" class="yellow">                     #########+++++++++++#########                    </text>
-<text x="400" y="58" text-anchor="middle" class="yellow">                #######++--..............----++#######                </text>
-<text x="400" y="72" text-anchor="middle" class="yellow">              ######+--.......................--++#######             </text>
-<text x="400" y="86" text-anchor="middle" class="yellow">            #####+---............................--++######           </text>
-<text x="400" y="100" text-anchor="middle" class="yellow">          #####+--...............................-----+######         </text>
-<text x="400" y="114" text-anchor="middle" class="yellow">        #####+-..................................-------+#####        </text>
-<text x="400" y="128" text-anchor="middle" class="yellow">       #####+........................................-----+#####      </text>
-<text x="400" y="142" text-anchor="middle" class="yellow">     ++###+-......................................-....----+#####     </text>
-<text x="400" y="156" text-anchor="middle" class="yellow">     ####+............................................-------+###     </text>
-<text x="400" y="170" text-anchor="middle" class="yellow">     ###+-........--........-+....................--....------####    </text>
-<text x="400" y="184" text-anchor="middle" class="yellow">    ###+-........+###+-..-+###+-..............--++#++...------+##++  </text>
-<text x="400" y="198" text-anchor="middle" class="yellow">    ###-..........-+###++####+............--+#######+-..-------+#### </text>
-<text x="400" y="212" text-anchor="middle" class="yellow">   ###+-............-+#####+-..........-+######++--....-.------+##++ </text>
-<text x="400" y="226" text-anchor="middle" class="yellow">  ++##-.............-+#####+-.........+########+-.....----------+### </text>
-<text x="400" y="240" text-anchor="middle" class="yellow">  ####-...........-+###++####+..........---+######--.----.-.----+### </text>
-<text x="400" y="254" text-anchor="middle" class="yellow">  ###+-..........-###+-..-+###+-.............----+++-.-----.--.-+### </text>
-<text x="400" y="268" text-anchor="middle" class="yellow">  ###--...........--.......-++......................-.----------+### </text>
-<text x="400" y="282" text-anchor="middle" class="yellow">  ###+-...........................................+##+----------+### </text>
-<text x="400" y="296" text-anchor="middle" class="yellow">  ###+-......--+##+-..............................-+####+---.---+### </text>
-<text x="400" y="310" text-anchor="middle" class="yellow">  ####+--...-+#####--..........................--+######+------++### </text>
-<text x="400" y="324" text-anchor="middle" class="yellow">  ++##+----..---+###+--.....................--+######+--------++#### </text>
-<text x="400" y="338" text-anchor="middle" class="yellow">  ++###++-......-++####+---.............---+#########+--------++##++ </text>
-<text x="400" y="352" text-anchor="middle" class="yellow">    -+##+--..-.....--#######+##+++#+#############+-+###+------+##++ </text>
-<text x="400" y="366" text-anchor="middle" class="yellow">    -+###+------......++#################++++++###+--+##+---++##### </text>
-<text x="400" y="380" text-anchor="middle" class="yellow">     #+##+----..-........---++++##########------+#++--+##++-+####   </text>
-<text x="400" y="394" text-anchor="middle" class="yellow">     --###++----....................----+###------+++++###+####++    </text>
-<text x="400" y="408" text-anchor="middle" class="yellow">       -+###++-----..-...............--.--+##++--++++#########++    </text>
-<text x="400" y="422" text-anchor="middle" class="yellow">        +++##++------.--.-..-..---..-------+####+++#########++     </text>
-<text x="400" y="436" text-anchor="middle" class="yellow">          ++###++---------------------------+###############       </text>
-<text x="400" y="450" text-anchor="middle" class="yellow">           +++###++--------------------------+++############       </text>
-<text x="400" y="464" text-anchor="middle" class="yellow">             +++###+++-+----------------+-+++++++#######+#         </text>
-<text x="400" y="478" text-anchor="middle" class="yellow">               -++######++++++-------+--+-++++########++           </text>
-<text x="400" y="492" text-anchor="middle" class="yellow">                 -+##+#######+++++++++++++###########               </text>
-<text x="400" y="506" text-anchor="middle" class="yellow">                       --+########################                 </text>
-<text x="400" y="520" text-anchor="middle" class="yellow">                           +++##########++                         </text>
-<text x="400" y="554" text-anchor="middle" class="gray">ai developer  ·  prompt whisperer</text>
-<text x="400" y="594" text-anchor="middle" class="orange">-------------------------------------- SYSTEM INFO ---------------------------------------</text>
-<text x="400" y="624" text-anchor="middle" class="gray">Location: ........................................................................ NYC, NY</text>
-<text x="400" y="644" text-anchor="middle" class="gray">Shell: ............................................. living tissue over metal endoskeleton</text>
-<text x="400" y="664" text-anchor="middle" class="gray">Languages: .............................................. english, bad english, help files</text>
-<text x="400" y="684" text-anchor="middle" class="gray">Focus: .................................................... AI/ML, Developer Tools, waning</text>
-<text x="400" y="724" text-anchor="middle" class="magenta">-------------------------------------- CLAUDE CODE ---------------------------------------</text>
-<text x="400" y="754" text-anchor="middle" class="gray">Sessions: .......................................................................... 14.7K</text>
-<text x="400" y="774" text-anchor="middle" class="gray">Messages: ......................................................................... 770.9K</text>
-<text x="400" y="794" text-anchor="middle" class="gray">Total Tokens: ...................................................................... 94.0B</text>
-<text x="400" y="814" text-anchor="middle" class="gray">Est. API Cost Saved: ............................................................ $136,360</text>
-<text x="400" y="854" text-anchor="middle" class="green">-------------------------------------- GITHUB STATS --------------------------------------</text>
-<text x="400" y="884" text-anchor="middle" class="gray">Repositories: ........................................................................ 255</text>
-<text x="400" y="904" text-anchor="middle" class="gray">Contributed To: ....................................................................... 78</text>
-<text x="400" y="924" text-anchor="middle" class="gray">Total Commits: ..................................................................... 10904</text>
-<text x="400" y="944" text-anchor="middle" class="gray">Pull Requests: ...................................................................... 1667</text>
-<text x="22.0" y="964" class="gray">Stars Earned: ...................................................................... 290 </text>
-<text x="769.6" y="964" class="yellow">★</text>
-<text x="22.0" y="984" class="gray">Lines of Code: ..................................... 7,405,089 ( </text>
-<text x="568.0" y="984" class="green">+15,449,601</text>
-<text x="660.4" y="984" class="gray">, </text>
-<text x="677.1999999999999" y="984" class="red">-8,089,596</text>
-<text x="761.1999999999999" y="984" class="gray"> )</text>
-<text x="400" y="1024" text-anchor="middle" class="text">--------------------------------------- PROJECTS ----------------------------------------</text>
-<text x="400" y="1054" text-anchor="middle" class="orange">[ AREA 51 ] ............................................................. just trust me</text>
-<text x="22.0" y="1084" class="gray">Nexus ....................... Enterprise API platform connecting </text>
-<text x="568.0" y="1084" class="redact">████████</text>
-<text x="635.2" y="1084" class="gray"> systems at scale</text>
-<text x="22.0" y="1104" class="gray">Origami ....................................... AI-powered </text>
-<text x="517.6" y="1104" class="redact">████████</text>
-<text x="584.8000000000001" y="1104" class="gray"> app, concept to launch</text>
-<text x="22.0" y="1124" class="gray">Foundry .................................... AI app builder for rapid </text>
-<text x="610.0" y="1124" class="redact">████████</text>
-<text x="677.2" y="1124" class="gray"> prototyping</text>
-<text x="22.0" y="1144" class="gray">Beacon ................................. Intelligence platform surfacing </text>
-<text x="635.2" y="1144" class="redact">████████</text>
-<text x="702.4000000000001" y="1144" class="gray"> insights</text>
-<text x="22.0" y="1164" class="gray">Meridian ...................................... Client relationship dashboard for </text>
-<text x="710.8000000000001" y="1164" class="redact">████████</text>
-<text x="22.0" y="1184" class="gray">Exodus ................................... Large-scale </text>
-<text x="484.0" y="1184" class="redact">████████</text>
-<text x="551.2" y="1184" class="gray"> migration across platforms</text>
-<text x="22.0" y="1204" class="gray">Oracle ...................................... Company-wide AI assistant for </text>
-<text x="660.4" y="1204" class="redact">████████</text>
-<text x="727.6" y="1204" class="gray"> teams</text>
-<text x="22.0" y="1224" class="gray">Relay .................................... Internal </text>
-<text x="458.8" y="1224" class="redact">████████</text>
-<text x="526.0" y="1224" class="gray"> tracking &amp; approvals platform</text>
-<text x="22.0" y="1244" class="gray">Tempo ................................. AI timesheet automation syncing </text>
-<text x="626.8000000000001" y="1244" class="redact">████████</text>
-<text x="694.0000000000001" y="1244" class="gray"> via Slack</text>
-<text x="22.0" y="1264" class="gray">Atlas ............................................ AI-assisted knowledge base for </text>
-<text x="710.8000000000001" y="1264" class="redact">████████</text>
-<text x="400" y="1304" text-anchor="middle" class="green">[ PUBLIC ] ............................................................... open source</text>
-<text x="400" y="1334" text-anchor="middle" class="gray">Dry Dock ..................................... Container update monitoring · 23 registries</text>
-<text x="400" y="1354" text-anchor="middle" class="text">  github.com/CodesWhat/drydock</text>
-<text x="400" y="1384" text-anchor="middle" class="gray">Portkey Admin MCP ...................................... Full Portkey Admin API MCP server</text>
-<text x="400" y="1404" text-anchor="middle" class="text">  github.com/scttbnsn/portkey-admin-mcp</text>
-<text x="400" y="1434" text-anchor="middle" class="gray">Sock Guard ......................................... Default-deny Docker socket proxy · Go</text>
-<text x="400" y="1454" text-anchor="middle" class="text">  github.com/CodesWhat/sockguard</text>
+<text x="400" y="30" text-anchor="middle" class="yellow">                             ##*++++***#%%                    </text>
+<text x="400" y="44" text-anchor="middle" class="yellow">                        ##*++=++====+++++*##%%                </text>
+<text x="400" y="58" text-anchor="middle" class="yellow">                     @%#++=========-====++***##%%@            </text>
+<text x="400" y="72" text-anchor="middle" class="yellow">                    %#*+====-----------====+**#%%@@           </text>
+<text x="400" y="86" text-anchor="middle" class="yellow">                  %%#*===--:-::::-:-----===+++*##%%@@         </text>
+<text x="400" y="100" text-anchor="middle" class="yellow">                %%#*+===--::::::::::----===++++**##%%@@       </text>
+<text x="400" y="114" text-anchor="middle" class="yellow">               @%**==-=--::::::..::::----==++******##%%@      </text>
+<text x="400" y="128" text-anchor="middle" class="yellow">              @%*+===---::::::..:..::----==+++*******##%@     </text>
+<text x="400" y="142" text-anchor="middle" class="yellow">              %*+=-==--:--:-:::.:::::-:--===++++***++*##%     </text>
+<text x="400" y="156" text-anchor="middle" class="yellow">              #*+====----:::::::::::::::-====+*+++*****#%     </text>
+<text x="400" y="170" text-anchor="middle" class="yellow">              #*+===----:::::::::---::--===+++++++++***#%     </text>
+<text x="400" y="184" text-anchor="middle" class="yellow">              %*++=----::::....:--::::::--====++******##%     </text>
+<text x="400" y="198" text-anchor="middle" class="yellow">              %#*+===::----::::-=:::-:::-=**++++******##%     </text>
+<text x="400" y="212" text-anchor="middle" class="yellow">              %%*=+*%%%%%%%%%%#*****#%%%%%%%%@@@@@%###%#%     </text>
+<text x="400" y="226" text-anchor="middle" class="yellow">            *+*%@+@*=**%@@@@%#+@%%@@@##%%@@@@%###@%%@@%%@#*#  </text>
+<text x="400" y="240" text-anchor="middle" class="yellow">           +%#+#*@**#%#**%%##%+@#-=%@@%@#*@@%#%@%#@###@%##%%# </text>
+<text x="400" y="254" text-anchor="middle" class="yellow">           +*+##=+%=++*+++**+=+#--+*@#%%#****######***#%%**%# </text>
+<text x="400" y="268" text-anchor="middle" class="yellow">           %*###--%*-===----=+%-:-=*#@#*++++++++=@***###%%*## </text>
+<text x="400" y="282" text-anchor="middle" class="yellow">          %@#*%%=--+%##*++*#%*=-:-+*##%@%**++*#%@**+*#%%%#*#  </text>
+<text x="400" y="296" text-anchor="middle" class="yellow">         @%%%#%#+=-:------+*=:-::-+#*++#%*===++++++**#%%#%*#  </text>
+<text x="400" y="310" text-anchor="middle" class="yellow">         %%%%%%#*+-=-::-+**-+###+**%@@%%%#*=-==++++*#%%%%##%% </text>
+<text x="400" y="324" text-anchor="middle" class="yellow">        %%#%@%%%##+=---***##%%%%%#%%%#%%%%%##==+**##%#%%%%#%@ </text>
+<text x="400" y="338" text-anchor="middle" class="yellow">        %%%%%%%%%##++++###%%#%%%%%%%%%%#%%%%*%*######%%%%%%#@ </text>
+<text x="400" y="352" text-anchor="middle" class="yellow">        %%%@#####*###*#%%@%%##*+===++%%%%%%%%%%###%##%%%%#%%% </text>
+<text x="400" y="366" text-anchor="middle" class="yellow">         %%%%%##*####%%#%%==-=++*#+####*#**#%##%#%%##%%%%%##@@</text>
+<text x="400" y="380" text-anchor="middle" class="yellow">         @%%%#%##%###%##%#+-+=+######*##*#########%#%%##%%%#@@</text>
+<text x="400" y="394" text-anchor="middle" class="yellow">          @%%%#%%%%%%%%###+++=+*##%##****##*###%#%%#%%%%%%%#%%</text>
+<text x="400" y="408" text-anchor="middle" class="yellow">          @%%%#%%%%%%%#%#****++#*#*######%###%###%#%%%%%%%##@@</text>
+<text x="400" y="422" text-anchor="middle" class="yellow">          @@%%%#%%%%%%%%%%###+*##*###%#%#%@%%%#%*%#####%%%%@%@</text>
+<text x="400" y="436" text-anchor="middle" class="yellow">          %%%##%%%#%%#%####*#*#####%%%##%##%%%####%#%%%%%%@@@@</text>
+<text x="400" y="450" text-anchor="middle" class="yellow">          @%@%%#%%#######*###**###%##@%%%##%%###*#####%#%@%@  </text>
+<text x="400" y="464" text-anchor="middle" class="yellow">           @%@@%%#%###*#*############%####***#*#%##%#%#%%%@@  </text>
+<text x="400" y="478" text-anchor="middle" class="yellow">            @@%%%%##%####****###*#*##%%#*#######%%%%%%%%%@    </text>
+<text x="400" y="492" text-anchor="middle" class="yellow">              @@@%%%%#%####*#+####%#%#%########%%#%@@@@@      </text>
+<text x="400" y="506" text-anchor="middle" class="yellow">                @@@@@%%@%%##*##%#*########%%%%@%%@@@          </text>
+<text x="400" y="520" text-anchor="middle" class="yellow">                    @@@@@%%#%%#*#####%%#%%%%%%@@@             </text>
+<text x="400" y="534" text-anchor="middle" class="yellow">                        @@@%%%%%%%%@%%%%%%@@@                 </text>
+<text x="400" y="548" text-anchor="middle" class="yellow">                               @@@@@@@@                       </text>
+<text x="400" y="582" text-anchor="middle" class="gray">ai developer  ·  prompt whisperer</text>
+<text x="400" y="622" text-anchor="middle" class="orange">-------------------------------------- SYSTEM INFO ---------------------------------------</text>
+<text x="400" y="652" text-anchor="middle" class="gray">Location: ........................................................................ NYC, NY</text>
+<text x="400" y="672" text-anchor="middle" class="gray">Shell: ............................................. living tissue over metal endoskeleton</text>
+<text x="400" y="692" text-anchor="middle" class="gray">Languages: .............................................. english, bad english, help files</text>
+<text x="400" y="712" text-anchor="middle" class="gray">Focus: .................................................... AI/ML, Developer Tools, waning</text>
+<text x="400" y="752" text-anchor="middle" class="magenta">-------------------------------------- CLAUDE CODE ---------------------------------------</text>
+<text x="400" y="782" text-anchor="middle" class="gray">Sessions: .......................................................................... 14.7K</text>
+<text x="400" y="802" text-anchor="middle" class="gray">Messages: ......................................................................... 770.9K</text>
+<text x="400" y="822" text-anchor="middle" class="gray">Total Tokens: ...................................................................... 94.0B</text>
+<text x="400" y="842" text-anchor="middle" class="gray">Est. API Cost Saved: ............................................................ $136,360</text>
+<text x="400" y="882" text-anchor="middle" class="green">-------------------------------------- GITHUB STATS --------------------------------------</text>
+<text x="22.0" y="912" class="gray">Stars Earned: ...................................................................... 290 </text>
+<text x="769.6" y="912" class="yellow">★</text>
+<text x="400" y="932" text-anchor="middle" class="gray">Repositories: ........................................................................ 255</text>
+<text x="400" y="952" text-anchor="middle" class="gray">Contributed To: ....................................................................... 78</text>
+<text x="400" y="972" text-anchor="middle" class="gray">Total Commits: ..................................................................... 10904</text>
+<text x="400" y="992" text-anchor="middle" class="gray">Pull Requests: ...................................................................... 1667</text>
+<text x="22.0" y="1012" class="gray">Lines of Code: ..................................... 7,405,089 ( </text>
+<text x="568.0" y="1012" class="green">+15,449,601</text>
+<text x="660.4" y="1012" class="gray">, </text>
+<text x="677.1999999999999" y="1012" class="red">-8,089,596</text>
+<text x="761.1999999999999" y="1012" class="gray"> )</text>
+<text x="400" y="1052" text-anchor="middle" class="text">--------------------------------------- PROJECTS ----------------------------------------</text>
+<text x="400" y="1082" text-anchor="middle" class="orange">[ AREA 51 ] ............................................................. just trust me</text>
+<text x="22.0" y="1112" class="gray">Nexus ....................... Enterprise API platform connecting </text>
+<text x="568.0" y="1112" class="redact">████████</text>
+<text x="635.2" y="1112" class="gray"> systems at scale</text>
+<text x="22.0" y="1132" class="gray">Origami ....................................... AI-powered </text>
+<text x="517.6" y="1132" class="redact">████████</text>
+<text x="584.8000000000001" y="1132" class="gray"> app, concept to launch</text>
+<text x="22.0" y="1152" class="gray">Foundry .................................... AI app builder for rapid </text>
+<text x="610.0" y="1152" class="redact">████████</text>
+<text x="677.2" y="1152" class="gray"> prototyping</text>
+<text x="22.0" y="1172" class="gray">Beacon ................................. Intelligence platform surfacing </text>
+<text x="635.2" y="1172" class="redact">████████</text>
+<text x="702.4000000000001" y="1172" class="gray"> insights</text>
+<text x="22.0" y="1192" class="gray">Meridian ...................................... Client relationship dashboard for </text>
+<text x="710.8000000000001" y="1192" class="redact">████████</text>
+<text x="22.0" y="1212" class="gray">Exodus ................................... Large-scale </text>
+<text x="484.0" y="1212" class="redact">████████</text>
+<text x="551.2" y="1212" class="gray"> migration across platforms</text>
+<text x="22.0" y="1232" class="gray">Oracle ...................................... Company-wide AI assistant for </text>
+<text x="660.4" y="1232" class="redact">████████</text>
+<text x="727.6" y="1232" class="gray"> teams</text>
+<text x="22.0" y="1252" class="gray">Relay .................................... Internal </text>
+<text x="458.8" y="1252" class="redact">████████</text>
+<text x="526.0" y="1252" class="gray"> tracking &amp; approvals platform</text>
+<text x="22.0" y="1272" class="gray">Tempo ................................. AI timesheet automation syncing </text>
+<text x="626.8000000000001" y="1272" class="redact">████████</text>
+<text x="694.0000000000001" y="1272" class="gray"> via Slack</text>
+<text x="22.0" y="1292" class="gray">Atlas ............................................ AI-assisted knowledge base for </text>
+<text x="710.8000000000001" y="1292" class="redact">████████</text>
+<text x="400" y="1332" text-anchor="middle" class="green">[ PUBLIC ] ............................................................... open source</text>
+<text x="400" y="1362" text-anchor="middle" class="gray">sockguard .......................................... Default-deny Docker socket proxy · Go</text>
+<text x="400" y="1382" text-anchor="middle" class="text">  github.com/CodesWhat/sockguard</text>
+<text x="400" y="1412" text-anchor="middle" class="gray">drydock ...................................... Container update monitoring · 23 registries</text>
+<text x="400" y="1432" text-anchor="middle" class="text">  github.com/CodesWhat/drydock</text>
+<text x="400" y="1462" text-anchor="middle" class="gray">portkey-admin-mcp ...................................... Full Portkey Admin API MCP server</text>
+<text x="400" y="1482" text-anchor="middle" class="text">  github.com/scttbnsn/portkey-admin-mcp</text>
 </svg>
