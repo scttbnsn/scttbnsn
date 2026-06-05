@@ -227,7 +227,7 @@ def generate_svg(mode="dark", claude=None, github=None):
     lines.append(("", "text", "blank"))
 
     lines.append((project_line("Portkey Admin MCP", "Full Portkey Admin API MCP server"), "gray", "normal"))
-    lines.append(("  github.com/s-b-e-n-s-o-n/portkey-admin-mcp", "text", "normal"))
+    lines.append(("  github.com/scttbnsn/portkey-admin-mcp", "text", "normal"))
 
     lines.append(("", "text", "blank"))
 

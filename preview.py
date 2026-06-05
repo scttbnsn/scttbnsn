@@ -244,7 +244,7 @@ def run_gh_graphql(query, variables=None):
     return None
 
 
-def get_all_repos(username="s-b-e-n-s-o-n"):
+def get_all_repos(username="scttbnsn"):
     """Get all repos (owned, collaborated, org member) with pagination."""
     all_repos = []
     page = 1
@@ -262,7 +262,7 @@ def get_all_repos(username="s-b-e-n-s-o-n"):
     return all_repos
 
 
-def get_loc_stats(repos, username="s-b-e-n-s-o-n"):
+def get_loc_stats(repos, username="scttbnsn"):
     """Fetch lines of code stats by iterating through repos using gh CLI."""
     import time
 
@@ -305,7 +305,7 @@ def get_loc_stats(repos, username="s-b-e-n-s-o-n"):
     }
 
 
-def get_all_commits(repos, username="s-b-e-n-s-o-n"):
+def get_all_commits(repos, username="scttbnsn"):
     """Get total commits across all repos using gh CLI."""
     total_commits = 0
 
@@ -353,7 +353,7 @@ def get_all_commits(repos, username="s-b-e-n-s-o-n"):
     return total_commits
 
 
-def get_github_stats(username="s-b-e-n-s-o-n"):
+def get_github_stats(username="scttbnsn"):
     """Fetch GitHub stats via gh CLI GraphQL."""
     # Check if gh CLI is available
     try:
@@ -634,7 +634,7 @@ def render_nfo(fetch_github=False):
     output.append(sep)
     output.append(line())
 
-    output.append(stat_line("GitHub", "github.com/s-b-e-n-s-o-n"))
+    output.append(stat_line("GitHub", "github.com/scttbnsn"))
     output.append(stat_line("Location", "Bridge and/or Tunnel"))
     output.append(line())
 
