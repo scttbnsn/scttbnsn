@@ -40,6 +40,7 @@ def generate_svg(mode="dark", claude=None, github=None):
             'orange': '#fb923c',
             'yellow': '#fbbf24',
             'redact': '#c9d1d9',
+            'ink': '#e6edf3',
         }
     else:
         colors = {
@@ -52,6 +53,7 @@ def generate_svg(mode="dark", claude=None, github=None):
             'orange': '#ea580c',
             'yellow': '#d97706',
             'redact': '#1f2328',
+            'ink': '#1f2328',
         }
 
     c = colors
@@ -121,7 +123,7 @@ def generate_svg(mode="dark", claude=None, github=None):
         "                               @@@@@@@@                       ",
     ]
     for art in header_art:
-        lines.append((art, "yellow", "tight"))
+        lines.append((art, "ink", "tight"))
 
     lines.append(("", "text", "blank"))
     lines.append(("", "text", "blank"))
@@ -234,7 +236,7 @@ def generate_svg(mode="dark", claude=None, github=None):
     lines.append(("", "text", "blank"))
 
     lines.append((project_line("portkey-admin-mcp", "Full Portkey Admin API MCP server"), "gray", "normal"))
-    lines.append(("  github.com/scttbnsn/portkey-admin-mcp", "text", "normal"))
+    lines.append(("  github.com/CodesWhat/portkey-admin-mcp", "text", "normal"))
 
     lines.append(("", "text", "blank"))
 
@@ -276,6 +278,7 @@ text {{
 .orange {{ fill: {c['orange']}; }}
 .yellow {{ fill: {c['yellow']}; }}
 .redact {{ fill: {c['redact']}; }}
+.ink {{ fill: {c['ink']}; }}
 </style>
 <rect width="{width}" height="{height}" fill="{c['bg']}" rx="10"/>
 <text x="{width - 15}" y="12" text-anchor="end" class="gray" font-size="11">{date_stamp}</text>

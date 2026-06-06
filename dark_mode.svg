@@ -20,47 +20,48 @@ text {
 .orange { fill: #fb923c; }
 .yellow { fill: #fbbf24; }
 .redact { fill: #c9d1d9; }
+.ink { fill: #e6edf3; }
 </style>
 <rect width="800" height="1542" fill="#0d1117" rx="10"/>
 <text x="785" y="12" text-anchor="end" class="gray" font-size="11">6/5/26</text>
-<text x="400" y="30" text-anchor="middle" class="yellow">                             ##*++++***#%%                    </text>
-<text x="400" y="44" text-anchor="middle" class="yellow">                        ##*++=++====+++++*##%%                </text>
-<text x="400" y="58" text-anchor="middle" class="yellow">                     @%#++=========-====++***##%%@            </text>
-<text x="400" y="72" text-anchor="middle" class="yellow">                    %#*+====-----------====+**#%%@@           </text>
-<text x="400" y="86" text-anchor="middle" class="yellow">                  %%#*===--:-::::-:-----===+++*##%%@@         </text>
-<text x="400" y="100" text-anchor="middle" class="yellow">                %%#*+===--::::::::::----===++++**##%%@@       </text>
-<text x="400" y="114" text-anchor="middle" class="yellow">               @%**==-=--::::::..::::----==++******##%%@      </text>
-<text x="400" y="128" text-anchor="middle" class="yellow">              @%*+===---::::::..:..::----==+++*******##%@     </text>
-<text x="400" y="142" text-anchor="middle" class="yellow">              %*+=-==--:--:-:::.:::::-:--===++++***++*##%     </text>
-<text x="400" y="156" text-anchor="middle" class="yellow">              #*+====----:::::::::::::::-====+*+++*****#%     </text>
-<text x="400" y="170" text-anchor="middle" class="yellow">              #*+===----:::::::::---::--===+++++++++***#%     </text>
-<text x="400" y="184" text-anchor="middle" class="yellow">              %*++=----::::....:--::::::--====++******##%     </text>
-<text x="400" y="198" text-anchor="middle" class="yellow">              %#*+===::----::::-=:::-:::-=**++++******##%     </text>
-<text x="400" y="212" text-anchor="middle" class="yellow">              %%*=+*%%%%%%%%%%#*****#%%%%%%%%@@@@@%###%#%     </text>
-<text x="400" y="226" text-anchor="middle" class="yellow">            *+*%@+@*=**%@@@@%#+@%%@@@##%%@@@@%###@%%@@%%@#*#  </text>
-<text x="400" y="240" text-anchor="middle" class="yellow">           +%#+#*@**#%#**%%##%+@#-=%@@%@#*@@%#%@%#@###@%##%%# </text>
-<text x="400" y="254" text-anchor="middle" class="yellow">           +*+##=+%=++*+++**+=+#--+*@#%%#****######***#%%**%# </text>
-<text x="400" y="268" text-anchor="middle" class="yellow">           %*###--%*-===----=+%-:-=*#@#*++++++++=@***###%%*## </text>
-<text x="400" y="282" text-anchor="middle" class="yellow">          %@#*%%=--+%##*++*#%*=-:-+*##%@%**++*#%@**+*#%%%#*#  </text>
-<text x="400" y="296" text-anchor="middle" class="yellow">         @%%%#%#+=-:------+*=:-::-+#*++#%*===++++++**#%%#%*#  </text>
-<text x="400" y="310" text-anchor="middle" class="yellow">         %%%%%%#*+-=-::-+**-+###+**%@@%%%#*=-==++++*#%%%%##%% </text>
-<text x="400" y="324" text-anchor="middle" class="yellow">        %%#%@%%%##+=---***##%%%%%#%%%#%%%%%##==+**##%#%%%%#%@ </text>
-<text x="400" y="338" text-anchor="middle" class="yellow">        %%%%%%%%%##++++###%%#%%%%%%%%%%#%%%%*%*######%%%%%%#@ </text>
-<text x="400" y="352" text-anchor="middle" class="yellow">        %%%@#####*###*#%%@%%##*+===++%%%%%%%%%%###%##%%%%#%%% </text>
-<text x="400" y="366" text-anchor="middle" class="yellow">         %%%%%##*####%%#%%==-=++*#+####*#**#%##%#%%##%%%%%##@@</text>
-<text x="400" y="380" text-anchor="middle" class="yellow">         @%%%#%##%###%##%#+-+=+######*##*#########%#%%##%%%#@@</text>
-<text x="400" y="394" text-anchor="middle" class="yellow">          @%%%#%%%%%%%%###+++=+*##%##****##*###%#%%#%%%%%%%#%%</text>
-<text x="400" y="408" text-anchor="middle" class="yellow">          @%%%#%%%%%%%#%#****++#*#*######%###%###%#%%%%%%%##@@</text>
-<text x="400" y="422" text-anchor="middle" class="yellow">          @@%%%#%%%%%%%%%%###+*##*###%#%#%@%%%#%*%#####%%%%@%@</text>
-<text x="400" y="436" text-anchor="middle" class="yellow">          %%%##%%%#%%#%####*#*#####%%%##%##%%%####%#%%%%%%@@@@</text>
-<text x="400" y="450" text-anchor="middle" class="yellow">          @%@%%#%%#######*###**###%##@%%%##%%###*#####%#%@%@  </text>
-<text x="400" y="464" text-anchor="middle" class="yellow">           @%@@%%#%###*#*############%####***#*#%##%#%#%%%@@  </text>
-<text x="400" y="478" text-anchor="middle" class="yellow">            @@%%%%##%####****###*#*##%%#*#######%%%%%%%%%@    </text>
-<text x="400" y="492" text-anchor="middle" class="yellow">              @@@%%%%#%####*#+####%#%#%########%%#%@@@@@      </text>
-<text x="400" y="506" text-anchor="middle" class="yellow">                @@@@@%%@%%##*##%#*########%%%%@%%@@@          </text>
-<text x="400" y="520" text-anchor="middle" class="yellow">                    @@@@@%%#%%#*#####%%#%%%%%%@@@             </text>
-<text x="400" y="534" text-anchor="middle" class="yellow">                        @@@%%%%%%%%@%%%%%%@@@                 </text>
-<text x="400" y="548" text-anchor="middle" class="yellow">                               @@@@@@@@                       </text>
+<text x="400" y="30" text-anchor="middle" class="ink">                             ##*++++***#%%                    </text>
+<text x="400" y="44" text-anchor="middle" class="ink">                        ##*++=++====+++++*##%%                </text>
+<text x="400" y="58" text-anchor="middle" class="ink">                     @%#++=========-====++***##%%@            </text>
+<text x="400" y="72" text-anchor="middle" class="ink">                    %#*+====-----------====+**#%%@@           </text>
+<text x="400" y="86" text-anchor="middle" class="ink">                  %%#*===--:-::::-:-----===+++*##%%@@         </text>
+<text x="400" y="100" text-anchor="middle" class="ink">                %%#*+===--::::::::::----===++++**##%%@@       </text>
+<text x="400" y="114" text-anchor="middle" class="ink">               @%**==-=--::::::..::::----==++******##%%@      </text>
+<text x="400" y="128" text-anchor="middle" class="ink">              @%*+===---::::::..:..::----==+++*******##%@     </text>
+<text x="400" y="142" text-anchor="middle" class="ink">              %*+=-==--:--:-:::.:::::-:--===++++***++*##%     </text>
+<text x="400" y="156" text-anchor="middle" class="ink">              #*+====----:::::::::::::::-====+*+++*****#%     </text>
+<text x="400" y="170" text-anchor="middle" class="ink">              #*+===----:::::::::---::--===+++++++++***#%     </text>
+<text x="400" y="184" text-anchor="middle" class="ink">              %*++=----::::....:--::::::--====++******##%     </text>
+<text x="400" y="198" text-anchor="middle" class="ink">              %#*+===::----::::-=:::-:::-=**++++******##%     </text>
+<text x="400" y="212" text-anchor="middle" class="ink">              %%*=+*%%%%%%%%%%#*****#%%%%%%%%@@@@@%###%#%     </text>
+<text x="400" y="226" text-anchor="middle" class="ink">            *+*%@+@*=**%@@@@%#+@%%@@@##%%@@@@%###@%%@@%%@#*#  </text>
+<text x="400" y="240" text-anchor="middle" class="ink">           +%#+#*@**#%#**%%##%+@#-=%@@%@#*@@%#%@%#@###@%##%%# </text>
+<text x="400" y="254" text-anchor="middle" class="ink">           +*+##=+%=++*+++**+=+#--+*@#%%#****######***#%%**%# </text>
+<text x="400" y="268" text-anchor="middle" class="ink">           %*###--%*-===----=+%-:-=*#@#*++++++++=@***###%%*## </text>
+<text x="400" y="282" text-anchor="middle" class="ink">          %@#*%%=--+%##*++*#%*=-:-+*##%@%**++*#%@**+*#%%%#*#  </text>
+<text x="400" y="296" text-anchor="middle" class="ink">         @%%%#%#+=-:------+*=:-::-+#*++#%*===++++++**#%%#%*#  </text>
+<text x="400" y="310" text-anchor="middle" class="ink">         %%%%%%#*+-=-::-+**-+###+**%@@%%%#*=-==++++*#%%%%##%% </text>
+<text x="400" y="324" text-anchor="middle" class="ink">        %%#%@%%%##+=---***##%%%%%#%%%#%%%%%##==+**##%#%%%%#%@ </text>
+<text x="400" y="338" text-anchor="middle" class="ink">        %%%%%%%%%##++++###%%#%%%%%%%%%%#%%%%*%*######%%%%%%#@ </text>
+<text x="400" y="352" text-anchor="middle" class="ink">        %%%@#####*###*#%%@%%##*+===++%%%%%%%%%%###%##%%%%#%%% </text>
+<text x="400" y="366" text-anchor="middle" class="ink">         %%%%%##*####%%#%%==-=++*#+####*#**#%##%#%%##%%%%%##@@</text>
+<text x="400" y="380" text-anchor="middle" class="ink">         @%%%#%##%###%##%#+-+=+######*##*#########%#%%##%%%#@@</text>
+<text x="400" y="394" text-anchor="middle" class="ink">          @%%%#%%%%%%%%###+++=+*##%##****##*###%#%%#%%%%%%%#%%</text>
+<text x="400" y="408" text-anchor="middle" class="ink">          @%%%#%%%%%%%#%#****++#*#*######%###%###%#%%%%%%%##@@</text>
+<text x="400" y="422" text-anchor="middle" class="ink">          @@%%%#%%%%%%%%%%###+*##*###%#%#%@%%%#%*%#####%%%%@%@</text>
+<text x="400" y="436" text-anchor="middle" class="ink">          %%%##%%%#%%#%####*#*#####%%%##%##%%%####%#%%%%%%@@@@</text>
+<text x="400" y="450" text-anchor="middle" class="ink">          @%@%%#%%#######*###**###%##@%%%##%%###*#####%#%@%@  </text>
+<text x="400" y="464" text-anchor="middle" class="ink">           @%@@%%#%###*#*############%####***#*#%##%#%#%%%@@  </text>
+<text x="400" y="478" text-anchor="middle" class="ink">            @@%%%%##%####****###*#*##%%#*#######%%%%%%%%%@    </text>
+<text x="400" y="492" text-anchor="middle" class="ink">              @@@%%%%#%####*#+####%#%#%########%%#%@@@@@      </text>
+<text x="400" y="506" text-anchor="middle" class="ink">                @@@@@%%@%%##*##%#*########%%%%@%%@@@          </text>
+<text x="400" y="520" text-anchor="middle" class="ink">                    @@@@@%%#%%#*#####%%#%%%%%%@@@             </text>
+<text x="400" y="534" text-anchor="middle" class="ink">                        @@@%%%%%%%%@%%%%%%@@@                 </text>
+<text x="400" y="548" text-anchor="middle" class="ink">                               @@@@@@@@                       </text>
 <text x="400" y="582" text-anchor="middle" class="gray">ai developer  ·  prompt whisperer</text>
 <text x="400" y="622" text-anchor="middle" class="orange">-------------------------------------- SYSTEM INFO ---------------------------------------</text>
 <text x="400" y="652" text-anchor="middle" class="gray">Location: ........................................................................ NYC, NY</text>
@@ -120,5 +121,5 @@ text {
 <text x="400" y="1412" text-anchor="middle" class="gray">drydock ...................................... Container update monitoring · 23 registries</text>
 <text x="400" y="1432" text-anchor="middle" class="text">  github.com/CodesWhat/drydock</text>
 <text x="400" y="1462" text-anchor="middle" class="gray">portkey-admin-mcp ...................................... Full Portkey Admin API MCP server</text>
-<text x="400" y="1482" text-anchor="middle" class="text">  github.com/scttbnsn/portkey-admin-mcp</text>
+<text x="400" y="1482" text-anchor="middle" class="text">  github.com/CodesWhat/portkey-admin-mcp</text>
 </svg>
