@@ -1,14 +1,14 @@
 {
-  "timestamp": "2026-06-18T04:06:09.005840",
+  "timestamp": "2026-06-18T23:30:03.308362",
   "claude": {
-    "input_tokens": 71400046,
-    "output_tokens": 384519767,
-    "cache_creation": 4104816929,
-    "cache_read": 101271466711,
-    "messages": 882786,
-    "sessions": 16639,
-    "total_tokens": 105832203453,
-    "cost_estimate": 154569.229471
+    "input_tokens": 71547478,
+    "output_tokens": 384879906,
+    "cache_creation": 4106326315,
+    "cache_read": 101313816963,
+    "messages": 883051,
+    "sessions": 16641,
+    "total_tokens": 105876570662,
+    "cost_estimate": 154638.95207300002
   },
   "github": {
     "repos": 259,
