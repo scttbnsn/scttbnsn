@@ -23,7 +23,7 @@ text {
 .ink { fill: #1f2328; }
 </style>
 <rect width="800" height="1542" fill="#f6f8fa" rx="10"/>
-<text x="785" y="12" text-anchor="end" class="gray" font-size="11">6/26/26</text>
+<text x="785" y="12" text-anchor="end" class="gray" font-size="11">6/27/26</text>
 <text x="400" y="30" text-anchor="middle" class="ink">                             ##*++++***#%%                    </text>
 <text x="400" y="44" text-anchor="middle" class="ink">                        ##*++=++====+++++*##%%                </text>
 <text x="400" y="58" text-anchor="middle" class="ink">                     @%#++=========-====++***##%%@            </text>
@@ -68,18 +68,18 @@ text {
 <text x="400" y="672" text-anchor="middle" class="gray">Shell: ............................................. living tissue over metal endoskeleton</text>
 <text x="400" y="692" text-anchor="middle" class="gray">Languages: .............................................. english, bad english, help files</text>
 <text x="400" y="712" text-anchor="middle" class="gray">Focus: .................................................... AI/ML, Developer Tools, waning</text>
-<text x="400" y="752" text-anchor="middle" class="magenta">-------------------------------------- CLAUDE CODE ---------------------------------------</text>
+<text x="400" y="752" text-anchor="middle" class="magenta">-------------------------------------- TOKEN USAGE ---------------------------------------</text>
 <text x="400" y="782" text-anchor="middle" class="gray">Sessions: .......................................................................... 17.5K</text>
-<text x="400" y="802" text-anchor="middle" class="gray">Messages: ......................................................................... 929.7K</text>
-<text x="400" y="822" text-anchor="middle" class="gray">Total Tokens: ..................................................................... 110.9B</text>
-<text x="400" y="842" text-anchor="middle" class="gray">Est. API Cost Saved: ............................................................ $162,503</text>
+<text x="400" y="802" text-anchor="middle" class="gray">Messages: ......................................................................... 938.2K</text>
+<text x="400" y="822" text-anchor="middle" class="gray">Total Tokens: ..................................................................... 136.3B</text>
+<text x="400" y="842" text-anchor="middle" class="gray">Est. API Cost Saved: ............................................................ $174,339</text>
 <text x="400" y="882" text-anchor="middle" class="green">-------------------------------------- GITHUB STATS --------------------------------------</text>
-<text x="22.0" y="912" class="gray">Stars Earned: ...................................................................... 301 </text>
+<text x="22.0" y="912" class="gray">Stars Earned: ...................................................................... 302 </text>
 <text x="769.6" y="912" class="yellow">★</text>
-<text x="400" y="932" text-anchor="middle" class="gray">Repositories: ........................................................................ 261</text>
-<text x="400" y="952" text-anchor="middle" class="gray">Contributed To: ....................................................................... 79</text>
+<text x="400" y="932" text-anchor="middle" class="gray">Repositories: ........................................................................ 263</text>
+<text x="400" y="952" text-anchor="middle" class="gray">Contributed To: ....................................................................... 80</text>
 <text x="400" y="972" text-anchor="middle" class="gray">Total Commits: ..................................................................... 11031</text>
-<text x="400" y="992" text-anchor="middle" class="gray">Pull Requests: ...................................................................... 1942</text>
+<text x="400" y="992" text-anchor="middle" class="gray">Pull Requests: ...................................................................... 1957</text>
 <text x="22.0" y="1012" class="gray">Lines of Code: ................................... 28,776,453 ( </text>
 <text x="559.6" y="1012" class="green">+57,320,641</text>
 <text x="652.0" y="1012" class="gray">, </text>
