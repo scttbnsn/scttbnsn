@@ -68,7 +68,7 @@ text {
 <text x="400" y="672" text-anchor="middle" class="gray">Shell: ............................................. living tissue over metal endoskeleton</text>
 <text x="400" y="692" text-anchor="middle" class="gray">Languages: .............................................. english, bad english, help files</text>
 <text x="400" y="712" text-anchor="middle" class="gray">Focus: .................................................... AI/ML, Developer Tools, waning</text>
-<text x="400" y="752" text-anchor="middle" class="magenta">-------------------------------------- TOKEN USAGE ---------------------------------------</text>
+<text x="400" y="752" text-anchor="middle" class="magenta">-------------------------------------- CLAUDE CODE ---------------------------------------</text>
 <text x="400" y="782" text-anchor="middle" class="gray">Sessions: .......................................................................... 17.5K</text>
 <text x="400" y="802" text-anchor="middle" class="gray">Messages: ......................................................................... 947.1K</text>
 <text x="400" y="822" text-anchor="middle" class="gray">Total Tokens: ..................................................................... 112.4B</text>
