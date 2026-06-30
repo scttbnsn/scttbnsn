@@ -68,11 +68,11 @@ text {
 <text x="400" y="672" text-anchor="middle" class="gray">Shell: ............................................. living tissue over metal endoskeleton</text>
 <text x="400" y="692" text-anchor="middle" class="gray">Languages: .............................................. english, bad english, help files</text>
 <text x="400" y="712" text-anchor="middle" class="gray">Focus: .................................................... AI/ML, Developer Tools, waning</text>
-<text x="400" y="752" text-anchor="middle" class="magenta">-------------------------------------- CLAUDE CODE ---------------------------------------</text>
+<text x="400" y="752" text-anchor="middle" class="magenta">-------------------------------------- TOKEN USAGE ---------------------------------------</text>
 <text x="400" y="782" text-anchor="middle" class="gray">Sessions: .......................................................................... 17.5K</text>
-<text x="400" y="802" text-anchor="middle" class="gray">Messages: ......................................................................... 947.1K</text>
-<text x="400" y="822" text-anchor="middle" class="gray">Total Tokens: ..................................................................... 112.4B</text>
-<text x="400" y="842" text-anchor="middle" class="gray">Est. API Cost Saved: ............................................................ $164,998</text>
+<text x="400" y="802" text-anchor="middle" class="gray">Messages: ......................................................................... 953.1K</text>
+<text x="400" y="822" text-anchor="middle" class="gray">Total Tokens: ..................................................................... 137.8B</text>
+<text x="400" y="842" text-anchor="middle" class="gray">Est. API Cost Saved: ............................................................ $189,587</text>
 <text x="400" y="882" text-anchor="middle" class="green">-------------------------------------- GITHUB STATS --------------------------------------</text>
 <text x="22.0" y="912" class="gray">Stars Earned: ...................................................................... 304 </text>
 <text x="769.6" y="912" class="yellow">★</text>
@@ -80,10 +80,10 @@ text {
 <text x="400" y="952" text-anchor="middle" class="gray">Contributed To: ....................................................................... 82</text>
 <text x="400" y="972" text-anchor="middle" class="gray">Total Commits: ..................................................................... 11387</text>
 <text x="400" y="992" text-anchor="middle" class="gray">Pull Requests: ...................................................................... 1974</text>
-<text x="22.0" y="1012" class="gray">Lines of Code: ................................... 28,965,347 ( </text>
-<text x="559.6" y="1012" class="green">+57,611,935</text>
+<text x="22.0" y="1012" class="gray">Lines of Code: ................................... 28,974,831 ( </text>
+<text x="559.6" y="1012" class="green">+57,626,500</text>
 <text x="652.0" y="1012" class="gray">, </text>
-<text x="668.8" y="1012" class="red">-28,646,588</text>
+<text x="668.8" y="1012" class="red">-28,651,669</text>
 <text x="761.1999999999999" y="1012" class="gray"> )</text>
 <text x="400" y="1052" text-anchor="middle" class="text">--------------------------------------- PROJECTS ----------------------------------------</text>
 <text x="400" y="1082" text-anchor="middle" class="orange">[ AREA 51 ] ............................................................. just trust me</text>
