@@ -68,13 +68,13 @@ text {
 <text x="400" y="672" text-anchor="middle" class="gray">Shell: ............................................. living tissue over metal endoskeleton</text>
 <text x="400" y="692" text-anchor="middle" class="gray">Languages: .............................................. english, bad english, help files</text>
 <text x="400" y="712" text-anchor="middle" class="gray">Focus: .................................................... AI/ML, Developer Tools, waning</text>
-<text x="400" y="752" text-anchor="middle" class="magenta">-------------------------------------- CLAUDE CODE ---------------------------------------</text>
+<text x="400" y="752" text-anchor="middle" class="magenta">-------------------------------------- TOKEN USAGE ---------------------------------------</text>
 <text x="400" y="782" text-anchor="middle" class="gray">Sessions: .......................................................................... 17.6K</text>
-<text x="400" y="802" text-anchor="middle" class="gray">Messages: ......................................................................... 982.4K</text>
-<text x="400" y="822" text-anchor="middle" class="gray">Total Tokens: ..................................................................... 116.1B</text>
-<text x="400" y="842" text-anchor="middle" class="gray">Est. API Cost Saved: ............................................................ $171,005</text>
+<text x="400" y="802" text-anchor="middle" class="gray">Messages: ......................................................................... 988.3K</text>
+<text x="400" y="822" text-anchor="middle" class="gray">Total Tokens: ..................................................................... 142.5B</text>
+<text x="400" y="842" text-anchor="middle" class="gray">Est. API Cost Saved: ............................................................ $197,712</text>
 <text x="400" y="882" text-anchor="middle" class="green">-------------------------------------- GITHUB STATS --------------------------------------</text>
-<text x="22.0" y="912" class="gray">Stars Earned: ...................................................................... 306 </text>
+<text x="22.0" y="912" class="gray">Stars Earned: ...................................................................... 307 </text>
 <text x="769.6" y="912" class="yellow">★</text>
 <text x="400" y="932" text-anchor="middle" class="gray">Repositories: ........................................................................ 285</text>
 <text x="400" y="952" text-anchor="middle" class="gray">Contributed To: ....................................................................... 88</text>
