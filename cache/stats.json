@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-21T04:00:32.283904",
+  "timestamp": "2026-07-22T01:52:33.595464",
   "claude": {
     "input_tokens": 109354254,
     "output_tokens": 527491581,
@@ -10,47 +10,15 @@
     "messages": 1059176,
     "cost_estimate": 185424.20580599998
   },
-  "token_usage": {
-    "input_tokens": 1733180270,
-    "output_tokens": 658724644,
-    "cache_creation": 4824379090,
-    "cache_read": 153765367688,
-    "total_tokens": 160981651692,
-    "sessions": 17694,
-    "messages": 1059176,
-    "cost_estimate": 225888.86659159997,
-    "providers": {
-      "claude": {
-        "input_tokens": 109354254,
-        "output_tokens": 527491581,
-        "cache_creation": 4824379090,
-        "cache_read": 120262124936,
-        "total_tokens": 125723349861,
-        "sessions": 17694,
-        "messages": 1059176,
-        "cost_estimate": 185424.20580599998
-      },
-      "other": {
-        "input_tokens": 1623826016,
-        "output_tokens": 131233063,
-        "cache_creation": 0,
-        "cache_read": 33503242752,
-        "total_tokens": 35258301831,
-        "sessions": 0,
-        "messages": 0,
-        "cost_estimate": 40464.6607856
-      }
-    }
-  },
   "github": {
-    "repos": 292,
-    "commits": 11935,
-    "stars": 309,
+    "repos": 297,
+    "commits": 12173,
+    "stars": 311,
     "followers": 3,
     "following": 0,
-    "contributed_repos": 94,
-    "prs": 2260,
-    "issues": 51,
+    "contributed_repos": 97,
+    "prs": 2369,
+    "issues": 55,
     "loc_added": 61262284,
     "loc_deleted": 30264627,
     "loc_total": 30997657
