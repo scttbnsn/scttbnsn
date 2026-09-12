@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-11T06:47:19.839589",
+  "timestamp": "2026-09-12T05:18:59.411192",
   "claude": {
     "input_tokens": 113152162,
     "output_tokens": 705520012,
@@ -7,18 +7,18 @@
     "cache_read": 155937285826,
     "total_tokens": 162498157538,
     "sessions": 17955,
-    "messages": 1337412,
+    "messages": 1337413,
     "cost_estimate": 235656.403186
   },
   "token_usage": {
-    "input_tokens": 1176120973,
-    "output_tokens": 807567820,
+    "input_tokens": 1067891551,
+    "output_tokens": 796517637,
     "cache_creation": 5742199538,
-    "cache_read": 191502818242,
-    "total_tokens": 199228706573,
+    "cache_read": 188758925890,
+    "total_tokens": 196365534616,
     "sessions": 17955,
-    "messages": 1337412,
-    "cost_estimate": 263632.99996548,
+    "messages": 1337413,
+    "cost_estimate": 260748.75280748,
     "providers": {
       "claude": {
         "input_tokens": 113152162,
@@ -27,18 +27,18 @@
         "cache_read": 155937285826,
         "total_tokens": 162498157538,
         "sessions": 17955,
-        "messages": 1337412,
+        "messages": 1337413,
         "cost_estimate": 235656.403186
       },
       "other": {
-        "input_tokens": 1062968811,
-        "output_tokens": 102047808,
+        "input_tokens": 954739389,
+        "output_tokens": 90997625,
         "cache_creation": 0,
-        "cache_read": 35565532416,
-        "total_tokens": 36730549035,
+        "cache_read": 32821640064,
+        "total_tokens": 33867377078,
         "sessions": 0,
         "messages": 0,
-        "cost_estimate": 27976.59677948001
+        "cost_estimate": 25092.349621479996
       }
     }
   },
