@@ -10,38 +10,6 @@
     "messages": 1337413,
     "cost_estimate": 235656.403186
   },
-  "token_usage": {
-    "input_tokens": 1116327562,
-    "output_tokens": 801412647,
-    "cache_creation": 5742199538,
-    "cache_read": 190576025922,
-    "total_tokens": 198235965669,
-    "sessions": 17955,
-    "messages": 1337413,
-    "cost_estimate": 259927.00926900003,
-    "providers": {
-      "claude": {
-        "input_tokens": 113152162,
-        "output_tokens": 705520012,
-        "cache_creation": 5742199538,
-        "cache_read": 155937285826,
-        "total_tokens": 162498157538,
-        "sessions": 17955,
-        "messages": 1337413,
-        "cost_estimate": 235656.403186
-      },
-      "other": {
-        "input_tokens": 1003175400,
-        "output_tokens": 95892635,
-        "cache_creation": 0,
-        "cache_read": 34638740096,
-        "total_tokens": 35737808131,
-        "sessions": 0,
-        "messages": 0,
-        "cost_estimate": 24270.606083000006
-      }
-    }
-  },
   "github": {
     "repos": 0,
     "commits": 13821,
