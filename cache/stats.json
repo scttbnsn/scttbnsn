@@ -1,14 +1,46 @@
 {
-  "timestamp": "2026-10-21T02:35:31.477696",
+  "timestamp": "2026-10-20T23:30:27.194673",
   "claude": {
-    "input_tokens": 113330078,
-    "output_tokens": 774819607,
-    "cache_creation": 6048524454,
-    "cache_read": 167832744152,
-    "total_tokens": 174769418291,
-    "sessions": 18059,
-    "messages": 1395913,
-    "cost_estimate": 252695.877682
+    "input_tokens": 113340132,
+    "output_tokens": 778880208,
+    "cache_creation": 6070582219,
+    "cache_read": 168559927373,
+    "total_tokens": 175522729932,
+    "sessions": 18060,
+    "messages": 1400734,
+    "cost_estimate": 253765.55712300004
+  },
+  "token_usage": {
+    "input_tokens": 113340132,
+    "output_tokens": 778880208,
+    "cache_creation": 6070582219,
+    "cache_read": 168559927373,
+    "total_tokens": 175522729932,
+    "sessions": 18060,
+    "messages": 1400734,
+    "cost_estimate": 253765.55712300004,
+    "providers": {
+      "claude": {
+        "input_tokens": 113340132,
+        "output_tokens": 778880208,
+        "cache_creation": 6070582219,
+        "cache_read": 168559927373,
+        "total_tokens": 175522729932,
+        "sessions": 18060,
+        "messages": 1400734,
+        "cost_estimate": 253765.55712300004
+      },
+      "other": {
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "cache_creation": 0,
+        "cache_read": 0,
+        "total_tokens": 0,
+        "sessions": 0,
+        "messages": 0,
+        "cost_estimate": 0
+      }
+    }
   },
   "github": {
     "repos": 40,
