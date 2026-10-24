@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-23T23:30:32.192466",
+  "timestamp": "2026-10-24T04:01:07.784126",
   "claude": {
     "input_tokens": 113385334,
     "output_tokens": 793110309,
@@ -11,14 +11,14 @@
     "cost_estimate": 257971.78985499998
   },
   "token_usage": {
-    "input_tokens": 113385334,
-    "output_tokens": 793110309,
+    "input_tokens": 1249449131,
+    "output_tokens": 911569357,
     "cache_creation": 6177800926,
-    "cache_read": 171266617985,
-    "total_tokens": 178350914554,
+    "cache_read": 211765991041,
+    "total_tokens": 220104810455,
     "sessions": 18063,
     "messages": 1420475,
-    "cost_estimate": 257971.78985499998,
+    "cost_estimate": 284203.62545904,
     "providers": {
       "claude": {
         "input_tokens": 113385334,
@@ -31,14 +31,14 @@
         "cost_estimate": 257971.78985499998
       },
       "other": {
-        "input_tokens": 0,
-        "output_tokens": 0,
+        "input_tokens": 1136063797,
+        "output_tokens": 118459048,
         "cache_creation": 0,
-        "cache_read": 0,
-        "total_tokens": 0,
+        "cache_read": 40499373056,
+        "total_tokens": 41753895901,
         "sessions": 0,
         "messages": 0,
-        "cost_estimate": 0
+        "cost_estimate": 26231.835604040003
       }
     }
   },
