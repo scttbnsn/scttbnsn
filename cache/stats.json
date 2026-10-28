@@ -1,44 +1,44 @@
 {
-  "timestamp": "2026-10-27T23:37:22.924985",
+  "timestamp": "2026-10-28T07:28:34.532030",
   "claude": {
-    "input_tokens": 113446170,
-    "output_tokens": 802871971,
-    "cache_creation": 6264351386,
-    "cache_read": 173809793678,
-    "total_tokens": 180990463205,
+    "input_tokens": 113446790,
+    "output_tokens": 803054783,
+    "cache_creation": 6266146681,
+    "cache_read": 173858465642,
+    "total_tokens": 181041113896,
     "sessions": 18083,
-    "messages": 1432202,
-    "cost_estimate": 261673.928368
+    "messages": 1432504,
+    "cost_estimate": 261746.043842
   },
   "token_usage": {
-    "input_tokens": 113446170,
-    "output_tokens": 802871971,
-    "cache_creation": 6264351386,
-    "cache_read": 173809793678,
-    "total_tokens": 180990463205,
+    "input_tokens": 1282974757,
+    "output_tokens": 927720115,
+    "cache_creation": 6266146681,
+    "cache_read": 216145512810,
+    "total_tokens": 224622354363,
     "sessions": 18083,
-    "messages": 1432202,
-    "cost_estimate": 261673.928368,
+    "messages": 1432504,
+    "cost_estimate": 288626.11394704,
     "providers": {
       "claude": {
-        "input_tokens": 113446170,
-        "output_tokens": 802871971,
-        "cache_creation": 6264351386,
-        "cache_read": 173809793678,
-        "total_tokens": 180990463205,
+        "input_tokens": 113446790,
+        "output_tokens": 803054783,
+        "cache_creation": 6266146681,
+        "cache_read": 173858465642,
+        "total_tokens": 181041113896,
         "sessions": 18083,
-        "messages": 1432202,
-        "cost_estimate": 261673.928368
+        "messages": 1432504,
+        "cost_estimate": 261746.043842
       },
       "other": {
-        "input_tokens": 0,
-        "output_tokens": 0,
+        "input_tokens": 1169527967,
+        "output_tokens": 124665332,
         "cache_creation": 0,
-        "cache_read": 0,
-        "total_tokens": 0,
+        "cache_read": 42287047168,
+        "total_tokens": 43581240467,
         "sessions": 0,
         "messages": 0,
-        "cost_estimate": 0
+        "cost_estimate": 26880.070105040006
       }
     }
   },
@@ -49,7 +49,7 @@
     "followers": 6,
     "following": 0,
     "contributed_repos": 104,
-    "prs": 3646,
+    "prs": 3648,
     "issues": 180,
     "loc_added": 63138125,
     "loc_deleted": 56452275,
