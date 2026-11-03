@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1542" viewBox="0 0 800 1542">
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1572" viewBox="0 0 800 1572">
 <style>
 @font-face {
     src: local('Consolas'), local('Monaco'), local('Menlo');
@@ -22,7 +22,7 @@ text {
 .redact { fill: #c9d1d9; }
 .ink { fill: #e6edf3; }
 </style>
-<rect width="800" height="1542" fill="#0d1117" rx="10"/>
+<rect width="800" height="1572" fill="#0d1117" rx="10"/>
 <text x="785" y="12" text-anchor="end" class="gray" font-size="11">11/3/26</text>
 <text x="400" y="30" text-anchor="middle" class="ink">                             ##*++++***#%%                    </text>
 <text x="400" y="44" text-anchor="middle" class="ink">                        ##*++=++====+++++*##%%                </text>
@@ -116,10 +116,34 @@ text {
 <text x="22.0" y="1292" class="gray">Atlas ............................................ AI-assisted knowledge base for </text>
 <text x="710.8000000000001" y="1292" class="redact">████████</text>
 <text x="400" y="1332" text-anchor="middle" class="green">[ PUBLIC ] ............................................................... open source</text>
-<text x="400" y="1362" text-anchor="middle" class="gray">sockguard .......................................... Default-deny Docker socket proxy · Go</text>
-<text x="400" y="1382" text-anchor="middle" class="text">  github.com/CodesWhat/sockguard</text>
-<text x="400" y="1412" text-anchor="middle" class="gray">drydock ...................................... Container update monitoring · 23 registries</text>
-<text x="400" y="1432" text-anchor="middle" class="text">  github.com/CodesWhat/drydock</text>
-<text x="400" y="1462" text-anchor="middle" class="gray">portkey-admin-mcp ...................................... Full Portkey Admin API MCP server</text>
-<text x="400" y="1482" text-anchor="middle" class="text">  github.com/CodesWhat/portkey-admin-mcp</text>
+<text x="22.0" y="1362" class="orange">  DOCKER                      </text>
+<text x="274.0" y="1362" class="orange">  AGENTS + AI                 </text>
+<text x="526.0" y="1362" class="orange">  MACOS                       </text>
+<text x="22.0" y="1392" class="text">  drydock </text>
+<text x="106.0" y="1392" class="yellow">★274</text>
+<text x="274.0" y="1392" class="text">  portkey-admin-mcp </text>
+<text x="442.0" y="1392" class="yellow">★6</text>
+<text x="526.0" y="1392" class="text">  idlescreen </text>
+<text x="635.2" y="1392" class="yellow">★3</text>
+<text x="22.0" y="1412" class="gray">  container updates           </text>
+<text x="274.0" y="1412" class="gray">  portkey admin MCP           </text>
+<text x="526.0" y="1412" class="gray">  ASCII screensaver           </text>
+<text x="22.0" y="1442" class="text">  sockguard </text>
+<text x="122.80000000000001" y="1442" class="yellow">★15</text>
+<text x="274.0" y="1442" class="text">  careerrat </text>
+<text x="374.8" y="1442" class="yellow">★4</text>
+<text x="526.0" y="1442" class="text">  mouthtype </text>
+<text x="626.8" y="1442" class="yellow">★1</text>
+<text x="22.0" y="1462" class="gray">  docker socket proxy         </text>
+<text x="274.0" y="1462" class="gray">  job-search workspace        </text>
+<text x="526.0" y="1462" class="gray">  push-to-talk dictation      </text>
+<text x="22.0" y="1492" class="text">  portwing </text>
+<text x="114.4" y="1492" class="yellow">★5</text>
+<text x="274.0" y="1492" class="text">  claudeline </text>
+<text x="383.2" y="1492" class="yellow">★3</text>
+<text x="526.0" y="1492" class="text">  dilated </text>
+<text x="610.0" y="1492" class="yellow">★1</text>
+<text x="22.0" y="1512" class="gray">  remote docker agent         </text>
+<text x="274.0" y="1512" class="gray">  claude code statusline      </text>
+<text x="526.0" y="1512" class="gray">  keeps Mac awake             </text>
 </svg>

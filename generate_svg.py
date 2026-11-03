@@ -10,6 +10,8 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
+import public_repos
+
 # Import stats functions from preview
 from preview import get_claude_stats, get_github_stats, format_number, save_stats_cache
 
@@ -220,25 +222,8 @@ def generate_svg(mode="dark", claude=None, github=None):
     lines.append(("", "text", "blank"))
     lines.append(("", "text", "blank"))
 
-    # Public - open source projects
-    lines.append(("[ PUBLIC ] ............................................................... open source", "green", "normal"))
-
-    lines.append(("", "text", "blank"))
-
-    lines.append((project_line("sockguard", "Default-deny Docker socket proxy · Go"), "gray", "normal"))
-    lines.append(("  github.com/CodesWhat/sockguard", "text", "normal"))
-
-    lines.append(("", "text", "blank"))
-
-    lines.append((project_line("drydock", "Container update monitoring · 23 registries"), "gray", "normal"))
-    lines.append(("  github.com/CodesWhat/drydock", "text", "normal"))
-
-    lines.append(("", "text", "blank"))
-
-    lines.append((project_line("portkey-admin-mcp", "Full Portkey Admin API MCP server"), "gray", "normal"))
-    lines.append(("  github.com/CodesWhat/portkey-admin-mcp", "text", "normal"))
-
-    lines.append(("", "text", "blank"))
+    # Public - open source projects (live 3x3 grid)
+    lines.extend(public_repos.public_lines())
 
     # Date stamp rendered separately in top-right corner
     now = datetime.now()
@@ -366,6 +351,16 @@ text {{
                 if i < len(parts) - 1:
                     svg += f'<text x="{x_pos}" y="{y}" class="redact">{escape_xml(redact_marker)}</text>\n'
                     x_pos += len(redact_marker) * char_width
+        elif line.startswith('__SEG__'):
+            # Multi-color positioned line: [(text, class), ...], centered as a block
+            parts = json.loads(line[len('__SEG__'):])
+            char_width = font_size * 0.6
+            total_chars = sum(len(t) for t, _ in parts)
+            x_pos = (width - total_chars * char_width) / 2
+            for t, cls in parts:
+                if t.strip():
+                    svg += f'<text x="{x_pos}" y="{y}" class="{cls}">{escape_xml(t)}</text>\n'
+                x_pos += len(t) * char_width
         elif line:  # Non-empty line
             escaped = escape_xml(line)
             svg += f'<text x="{width // 2}" y="{y}" text-anchor="middle" class="{color}">{escaped}</text>\n'
