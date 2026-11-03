@@ -137,7 +137,7 @@ def generate_svg(mode="dark", claude=None, github=None):
     lines.append(("", "text", "blank"))
 
     for key, val in [
-        ("Location", "NYC, NY"),
+        ("Location", "Silicon Alley"),
         ("Shell", "living tissue over metal endoskeleton"),
         ("Languages", "english, bad english, help files"),
         ("Focus", "AI/ML, Developer Tools, waning"),
