@@ -13,7 +13,7 @@ from pathlib import Path
 import public_repos
 
 # Import stats functions from preview
-from preview import get_claude_stats, get_github_stats, format_number, save_stats_cache
+from preview import get_claude_stats, get_token_usage_stats, get_github_stats, format_number, save_stats_cache
 
 
 def escape_xml(s):
@@ -21,12 +21,12 @@ def escape_xml(s):
     return s.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
 
 
-def generate_svg(mode="dark", claude=None, github=None):
+def generate_svg(mode="dark", token_usage=None, github=None, claude=None):
     """Generate SVG content for the given color mode."""
 
     # Get stats (use provided or fetch fresh)
-    if claude is None:
-        claude = get_claude_stats()
+    if token_usage is None:
+        token_usage = claude if claude is not None else get_token_usage_stats()
     if github is None:
         github = get_github_stats()
 
@@ -149,16 +149,16 @@ def generate_svg(mode="dark", claude=None, github=None):
     lines.append(("", "text", "blank"))
     lines.append(("", "text", "blank"))
 
-    # Claude Code header
-    lines.append(("-------------------------------------- CLAUDE CODE ---------------------------------------", "magenta", "normal"))
+    # Token usage header
+    lines.append(("-------------------------------------- TOKEN USAGE ---------------------------------------", "magenta", "normal"))
 
     lines.append(("", "text", "blank"))
 
     for key, val in [
-        ("Sessions", format_number(claude['sessions'])),
-        ("Messages", format_number(claude['messages'])),
-        ("Total Tokens", format_number(claude['total_tokens'])),
-        ("Est. API Cost Saved", f"${claude['cost_estimate']:,.0f}"),
+        ("Sessions", format_number(token_usage['sessions'])),
+        ("Messages", format_number(token_usage['messages'])),
+        ("Total Tokens", format_number(token_usage['total_tokens'])),
+        ("Est. API Cost Saved", f"${token_usage['cost_estimate']:,.0f}"),
     ]:
         lines.append((stat_line(key, val), "gray", "normal"))
 
@@ -384,20 +384,21 @@ def main():
 
     # Fetch stats once and reuse for both SVGs
     claude = get_claude_stats()
+    token_usage = get_token_usage_stats(claude)
     github = get_github_stats()
 
     # Save cache so CI commits fresh values
-    save_stats_cache(claude, github)
+    save_stats_cache(claude, github, token_usage)
 
     # Generate dark mode
-    dark_svg = generate_svg("dark", claude=claude, github=github)
+    dark_svg = generate_svg("dark", token_usage=token_usage, github=github)
     dark_path = script_dir / "dark_mode.svg"
     with open(dark_path, 'w', encoding='utf-8') as f:
         f.write(dark_svg)
     print(f"Generated: {dark_path}")
 
     # Generate light mode
-    light_svg = generate_svg("light", claude=claude, github=github)
+    light_svg = generate_svg("light", token_usage=token_usage, github=github)
     light_path = script_dir / "light_mode.svg"
     with open(light_path, 'w', encoding='utf-8') as f:
         f.write(light_svg)

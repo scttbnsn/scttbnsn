@@ -15,7 +15,8 @@ import os
 import sys
 import json
 import subprocess
-from datetime import datetime
+import hashlib
+from datetime import datetime, timezone
 from pathlib import Path
 
 # ANSI color codes for terminal preview
@@ -36,6 +37,18 @@ class Colors:
 
     # Background
     BG_BLACK = "\033[40m"
+
+
+CLAUDE_TOKEN_KEYS = ('input_tokens', 'output_tokens', 'cache_creation', 'cache_read')
+CLAUDE_CHECKPOINT_VERSION = 3
+
+
+def _empty_claude_stats():
+    return {
+        'input_tokens': 0, 'output_tokens': 0, 'cache_creation': 0,
+        'cache_read': 0, 'total_tokens': 0, 'sessions': 0,
+        'messages': 0, 'cost_estimate': 0,
+    }
 
 
 def _load_stats_cache():
@@ -121,12 +134,381 @@ def _count_jsonl_file(filepath):
     return stats
 
 
-def get_claude_stats():
-    """Parse Claude Code JSONL files using incremental checkpoint.
+def _usage_entry_from_json(data):
+    """Return a normalized usage entry from a Claude JSONL object."""
+    message = data.get('message')
+    if not isinstance(message, dict):
+        return None
 
-    Tracks which files have been counted and their sizes. On each run:
-    - New files: count fully, add to totals
-    - Grown files: re-count, add delta to totals
+    usage = message.get('usage', {})
+    if not usage:
+        return None
+
+    message_id = message.get('id') or data.get('uuid')
+    if not message_id:
+        return None
+
+    return {
+        'message_id': message_id,
+        'timestamp': data.get('timestamp', ''),
+        'session_id': data.get('sessionId'),
+        'input_tokens': usage.get('input_tokens', 0),
+        'output_tokens': usage.get('output_tokens', 0),
+        'cache_creation': usage.get('cache_creation_input_tokens', 0),
+        'cache_read': usage.get('cache_read_input_tokens', 0),
+    }
+
+
+def _checkpoint_entry(entry):
+    """Trim scanner-only fields before persisting a message checkpoint."""
+    saved = {key: entry.get(key, 0) for key in CLAUDE_TOKEN_KEYS}
+    saved['timestamp'] = entry.get('timestamp', '')
+    if entry.get('session_id'):
+        saved['session_id'] = entry['session_id']
+    saved['fingerprint'] = _message_fingerprint(entry)
+    return saved
+
+
+def _message_fingerprint(entry):
+    """Return a stable fingerprint for one counted Claude usage record."""
+    payload = {
+        'message_id': entry.get('message_id'),
+        'timestamp': entry.get('timestamp', ''),
+        'session_id': entry.get('session_id'),
+    }
+    for key in CLAUDE_TOKEN_KEYS:
+        payload[key] = entry.get(key, 0)
+
+    encoded = json.dumps(payload, sort_keys=True, separators=(',', ':')).encode()
+    return hashlib.sha256(encoded).hexdigest()
+
+
+def _messages_fingerprint(messages):
+    """Return a stable fingerprint for the visible deduped message set."""
+    digest = hashlib.sha256()
+    for message_id in sorted(messages):
+        digest.update(message_id.encode())
+        digest.update(b'\0')
+        digest.update(_message_fingerprint(messages[message_id]).encode())
+        digest.update(b'\0')
+    return digest.hexdigest()
+
+
+def _scan_claude_messages(claude_dir):
+    """Scan visible Claude logs, deduping repeated message IDs.
+
+    Claude JSONL logs can contain the same assistant message more than once.
+    Keep the latest record for each message ID, matching ccusage's effective
+    accounting and avoiding inflated totals from copied or rewritten records.
+    """
+    messages = {}
+    sessions = set()
+    order = 0
+
+    for jsonl_file in sorted(claude_dir.rglob("*.jsonl")):
+        try:
+            with open(jsonl_file, 'r') as f:
+                for line in f:
+                    order += 1
+                    try:
+                        data = json.loads(line)
+                    except json.JSONDecodeError:
+                        continue
+
+                    entry = _usage_entry_from_json(data)
+                    if not entry:
+                        continue
+
+                    session_id = entry.get('session_id')
+                    if session_id:
+                        sessions.add(session_id)
+
+                    message_id = entry['message_id']
+                    previous = messages.get(message_id)
+                    if (
+                        previous is None
+                        or (entry.get('timestamp', ''), order)
+                        >= (previous.get('timestamp', ''), previous.get('_order', 0))
+                    ):
+                        entry['_order'] = order
+                        messages[message_id] = entry
+        except OSError:
+            continue
+
+    return messages, sessions
+
+
+def _sum_message_entries(messages):
+    """Sum deduped message entries into the public Claude stats shape."""
+    totals = _empty_claude_stats()
+    totals['messages'] = len(messages)
+
+    for entry in messages.values():
+        for key in CLAUDE_TOKEN_KEYS:
+            totals[key] += entry.get(key, 0)
+
+    return totals
+
+
+def _finalize_claude_totals(totals):
+    """Recalculate derived Claude stats."""
+    totals['total_tokens'] = sum(totals[key] for key in CLAUDE_TOKEN_KEYS)
+
+    # Cost estimate using Claude pricing
+    # Sonnet: $3/MTok input, $15/MTok output
+    # Opus: $15/MTok input, $75/MTok output (assume mix, use higher)
+    # Cache writes cost same as input, cache reads are 90% cheaper
+    input_cost = (totals['input_tokens'] + totals['cache_creation']) * 10 / 1_000_000
+    output_cost = totals['output_tokens'] * 30 / 1_000_000
+    cache_read_cost = totals['cache_read'] * 1 / 1_000_000
+    totals['cost_estimate'] = input_cost + output_cost + cache_read_cost
+    return totals
+
+
+def _empty_usage_stats():
+    stats = _empty_claude_stats()
+    stats['providers'] = {}
+    return stats
+
+
+def _number(value, default=0):
+    return value if isinstance(value, (int, float)) else default
+
+
+def _normalize_ccusage_totals(totals):
+    """Convert ccusage totals JSON into this script's token stat shape."""
+    if not isinstance(totals, dict):
+        return _empty_claude_stats()
+
+    stats = {
+        'input_tokens': _number(totals.get('inputTokens')),
+        'output_tokens': _number(totals.get('outputTokens')),
+        'cache_creation': _number(totals.get('cacheCreationTokens')),
+        'cache_read': _number(totals.get('cacheReadTokens')),
+        'sessions': 0,
+        'messages': 0,
+        'cost_estimate': _number(totals.get('totalCost')),
+    }
+    stats['total_tokens'] = _number(
+        totals.get('totalTokens'),
+        sum(stats[key] for key in CLAUDE_TOKEN_KEYS),
+    )
+    return stats
+
+
+def _subtract_usage_stats(total_stats, subtract_stats):
+    """Return token stats in total_stats that are not in subtract_stats."""
+    stats = _empty_claude_stats()
+    for key in CLAUDE_TOKEN_KEYS:
+        stats[key] = max(total_stats.get(key, 0) - subtract_stats.get(key, 0), 0)
+    stats['total_tokens'] = sum(stats[key] for key in CLAUDE_TOKEN_KEYS)
+    stats['cost_estimate'] = max(
+        total_stats.get('cost_estimate', 0) - subtract_stats.get('cost_estimate', 0),
+        0,
+    )
+    return stats
+
+
+def _combine_usage_stats(claude_stats, other_stats):
+    """Combine the preserved Claude baseline with non-Claude provider usage."""
+    combined = dict(claude_stats)
+    for key in CLAUDE_TOKEN_KEYS:
+        combined[key] = claude_stats.get(key, 0) + other_stats.get(key, 0)
+    combined['total_tokens'] = sum(combined[key] for key in CLAUDE_TOKEN_KEYS)
+    combined['cost_estimate'] = (
+        claude_stats.get('cost_estimate', 0) + other_stats.get('cost_estimate', 0)
+    )
+    combined['sessions'] = claude_stats.get('sessions', 0) + other_stats.get('sessions', 0)
+    combined['messages'] = claude_stats.get('messages', 0) + other_stats.get('messages', 0)
+    combined['providers'] = {
+        'claude': dict(claude_stats),
+        'other': dict(other_stats),
+    }
+    return combined
+
+
+def _get_ccusage_totals(agent=None):
+    """Return ccusage daily totals, or None when ccusage is unavailable."""
+    cmd = ['npx', '-y', 'ccusage@latest']
+    if agent:
+        cmd.append(agent)
+    cmd.extend(['daily', '--json', '--offline'])
+
+    try:
+        result = subprocess.run(cmd, capture_output=True, text=True, timeout=60)
+    except (FileNotFoundError, subprocess.TimeoutExpired):
+        return None
+
+    if result.returncode != 0:
+        return None
+
+    try:
+        data = json.loads(result.stdout)
+    except json.JSONDecodeError:
+        return None
+
+    return data.get('totals') if isinstance(data, dict) else None
+
+
+OTHER_USAGE_KEYS = CLAUDE_TOKEN_KEYS + ('total_tokens', 'sessions', 'messages', 'cost_estimate')
+
+
+def _cached_other_usage(cached_stats):
+    """Return the non-Claude usage recorded in the cache, or zeros.
+
+    Prefers the stored token_usage.providers.other. Older caches only have
+    token_usage and claude, so derive other as the difference per key.
+    """
+    other = _empty_claude_stats()
+    if not isinstance(cached_stats, dict):
+        return other
+
+    token_usage = cached_stats.get('token_usage')
+    if not isinstance(token_usage, dict):
+        return other
+
+    providers = token_usage.get('providers')
+    stored = providers.get('other') if isinstance(providers, dict) else None
+    if isinstance(stored, dict):
+        for key in OTHER_USAGE_KEYS:
+            other[key] = max(_number(stored.get(key)), 0)
+        return other
+
+    cached_claude = cached_stats.get('claude')
+    cached_claude = cached_claude if isinstance(cached_claude, dict) else {}
+    for key in OTHER_USAGE_KEYS:
+        other[key] = max(_number(token_usage.get(key)) - _number(cached_claude.get(key)), 0)
+    return other
+
+
+def get_token_usage_stats(claude_stats=None):
+    """Return all-provider token usage for the profile SVG.
+
+    Claude uses this repo's preserved all-time baseline. Non-Claude providers
+    come from ccusage by subtracting current visible Claude usage from current
+    visible all-provider usage, preventing visible Claude logs from being
+    counted twice.
+
+    Non-Claude usage never regresses below the cached value. CI has no ccusage
+    or local logs, and local logs can rotate away, so a fresh reading lower
+    than the cache (or no reading) must not shrink the card.
+    """
+    claude_stats = claude_stats or get_claude_stats()
+
+    fresh_other = _empty_claude_stats()
+    all_totals = _get_ccusage_totals()
+    visible_claude_totals = _get_ccusage_totals('claude')
+    if all_totals is not None and visible_claude_totals is not None:
+        all_stats = _normalize_ccusage_totals(all_totals)
+        visible_claude_stats = _normalize_ccusage_totals(visible_claude_totals)
+        fresh_other = _subtract_usage_stats(all_stats, visible_claude_stats)
+
+    cached_other = _cached_other_usage(_load_stats_cache())
+    other_stats = {
+        key: max(fresh_other.get(key, 0), cached_other.get(key, 0))
+        for key in OTHER_USAGE_KEYS
+    }
+    other_stats['total_tokens'] = sum(other_stats[key] for key in CLAUDE_TOKEN_KEYS)
+    return _combine_usage_stats(claude_stats, other_stats)
+
+
+def _parse_cache_timestamp(cached_stats):
+    """Return the cache timestamp in UTC, if available."""
+    if not cached_stats:
+        return None
+
+    timestamp = cached_stats.get('timestamp')
+    if not timestamp:
+        return None
+
+    try:
+        dt = datetime.fromisoformat(timestamp)
+    except ValueError:
+        return None
+
+    if dt.tzinfo is None:
+        # Cache timestamps are written with datetime.now().isoformat(), so
+        # naive values represent the local machine timezone.
+        dt = dt.astimezone()
+
+    return dt.astimezone(timezone.utc)
+
+
+def _parse_usage_timestamp(entry):
+    """Return a usage entry timestamp in UTC, if available."""
+    timestamp = entry.get('timestamp')
+    if not timestamp:
+        return None
+
+    try:
+        dt = datetime.fromisoformat(timestamp.replace('Z', '+00:00'))
+    except ValueError:
+        return None
+
+    if dt.tzinfo is None:
+        dt = dt.astimezone()
+
+    return dt.astimezone(timezone.utc)
+
+
+def _legacy_cache_baseline(cached_stats, visible_messages, visible_sessions):
+    """Preserve older all-time totals and add only post-cache deduped usage."""
+    if not cached_stats or 'claude' not in cached_stats:
+        return None
+
+    cached_claude = cached_stats['claude']
+    visible_totals = _sum_message_entries(visible_messages)
+    visible_totals['sessions'] = len(visible_sessions)
+    visible_totals = _finalize_claude_totals(visible_totals)
+
+    if cached_claude.get('total_tokens', 0) <= visible_totals['total_tokens']:
+        return visible_totals, 'visible_logs'
+
+    totals = _empty_claude_stats()
+    for key in totals.keys():
+        totals[key] = cached_claude.get(key, 0)
+
+    cache_time = _parse_cache_timestamp(cached_stats)
+    if cache_time is None:
+        return _finalize_claude_totals(totals), 'legacy_cache'
+
+    new_sessions = set()
+    for entry in visible_messages.values():
+        usage_time = _parse_usage_timestamp(entry)
+        if usage_time is None or usage_time <= cache_time:
+            continue
+
+        totals['messages'] += 1
+        if entry.get('session_id'):
+            new_sessions.add(entry['session_id'])
+        for key in CLAUDE_TOKEN_KEYS:
+            totals[key] += entry.get(key, 0)
+
+    totals['sessions'] += len(new_sessions)
+    return _finalize_claude_totals(totals), 'legacy_cache'
+
+
+def _checkpoint_baseline(source, totals, cached_stats, visible_messages):
+    """Build metadata describing the all-time baseline the checkpoint extends."""
+    baseline = {
+        'source': source,
+        'created_at': datetime.now(timezone.utc).isoformat(),
+        'totals': dict(totals),
+        'visible_message_count': len(visible_messages),
+        'visible_fingerprint': _messages_fingerprint(visible_messages),
+    }
+    if cached_stats and cached_stats.get('timestamp'):
+        baseline['cache_timestamp'] = cached_stats['timestamp']
+    return baseline
+
+
+def get_claude_stats():
+    """Parse Claude Code JSONL files using message-ID dedupe.
+
+    Tracks which message IDs have been counted. On each run:
+    - Repeated message IDs: count only the latest usage record
+    - New messages: add full usage to cached cumulative totals
+    - Updated messages: add only positive token deltas
     - Pruned files: ignored (totals preserved)
     """
     claude_dir = Path.home() / ".claude" / "projects"
@@ -142,74 +524,85 @@ def get_claude_stats():
         }
 
     checkpoint = _load_checkpoint()
-    counted_files = checkpoint.get('files', {})
-    bootstrapping = len(counted_files) == 0
+    checkpoint_messages = checkpoint.get('messages')
+    visible_messages, visible_sessions = _scan_claude_messages(claude_dir)
 
-    # Start from cached totals (preserves history from pruned files)
-    totals = {
-        'input_tokens': 0, 'output_tokens': 0, 'cache_creation': 0,
-        'cache_read': 0, 'messages': 0, 'sessions': 0,
-    }
-    if cached and 'claude' in cached:
-        for key in totals:
+    # Migrate old file-size checkpoints, or create a first checkpoint, from
+    # the currently visible logs. When an older cache already has a larger
+    # all-time total than the retained logs can reproduce, preserve that
+    # baseline and only add deduped usage newer than the cache timestamp.
+    if not isinstance(checkpoint_messages, dict):
+        baseline_result = _legacy_cache_baseline(cached, visible_messages, visible_sessions)
+        if baseline_result is None:
+            totals = _sum_message_entries(visible_messages)
+            totals['sessions'] = len(visible_sessions)
+            totals = _finalize_claude_totals(totals)
+            baseline_source = 'visible_logs'
+        else:
+            totals, baseline_source = baseline_result
+        _save_checkpoint({
+            'version': CLAUDE_CHECKPOINT_VERSION,
+            'messages': {
+                message_id: _checkpoint_entry(entry)
+                for message_id, entry in visible_messages.items()
+            },
+            'sessions': sorted(visible_sessions),
+            'totals': totals,
+            'baseline': _checkpoint_baseline(
+                baseline_source, totals, cached, visible_messages
+            ),
+        })
+        return totals
+
+    # Start from v2 checkpoint totals to preserve already-counted pruned logs,
+    # rebuilding from message entries if needed and falling back to cache only
+    # for older checkpoints. Then add only new message IDs or positive deltas
+    # for messages that grew.
+    totals = _empty_claude_stats()
+    known_sessions = set(checkpoint.get('sessions', []))
+    checkpoint_totals = checkpoint.get('totals')
+    if isinstance(checkpoint_totals, dict):
+        for key in totals.keys():
+            totals[key] = checkpoint_totals.get(key, 0)
+    elif checkpoint_messages:
+        totals = _sum_message_entries(checkpoint_messages)
+        totals['sessions'] = len(known_sessions)
+    elif cached and 'claude' in cached:
+        for key in totals.keys():
             totals[key] = cached['claude'].get(key, 0)
 
-    for jsonl_file in claude_dir.rglob("*.jsonl"):
-        filepath = str(jsonl_file)
-        try:
-            file_size = jsonl_file.stat().st_size
-        except OSError:
-            continue
+    for message_id, entry in visible_messages.items():
+        current = _checkpoint_entry(entry)
+        previous = checkpoint_messages.get(message_id)
 
-        prev = counted_files.get(filepath)
-
-        if prev and prev['size'] == file_size:
-            # Already fully counted, no change
-            continue
-
-        # New or grown file — count it
-        try:
-            file_stats = _count_jsonl_file(filepath)
-        except Exception:
-            continue
-
-        if bootstrapping:
-            # First run: just record files without adding to totals,
-            # since the cache already reflects these files
-            counted_files[filepath] = {'size': file_size, **file_stats}
-            continue
-
-        if prev:
-            # File grew — add only the delta
-            for key in ('input_tokens', 'output_tokens', 'cache_creation',
-                        'cache_read', 'messages'):
-                delta = file_stats[key] - prev.get(key, 0)
-                if delta > 0:
-                    totals[key] += delta
+        if previous:
+            if current.get('fingerprint') != previous.get('fingerprint'):
+                for key in CLAUDE_TOKEN_KEYS:
+                    delta = current.get(key, 0) - previous.get(key, 0)
+                    if delta > 0:
+                        totals[key] += delta
+            if current.get('session_id'):
+                known_sessions.add(current['session_id'])
         else:
-            # Brand new file
-            totals['sessions'] += 1
-            for key in ('input_tokens', 'output_tokens', 'cache_creation',
-                        'cache_read', 'messages'):
-                totals[key] += file_stats[key]
+            totals['messages'] += 1
+            for key in CLAUDE_TOKEN_KEYS:
+                totals[key] += current.get(key, 0)
+            if current.get('session_id') and current['session_id'] not in known_sessions:
+                totals['sessions'] += 1
+                known_sessions.add(current['session_id'])
+        checkpoint_messages[message_id] = current
 
-        counted_files[filepath] = {'size': file_size, **file_stats}
+    totals = _finalize_claude_totals(totals)
 
-    # Save updated checkpoint
-    _save_checkpoint({'files': counted_files})
-
-    # Recalculate derived fields
-    totals['total_tokens'] = (totals['input_tokens'] + totals['output_tokens']
-                              + totals['cache_creation'] + totals['cache_read'])
-
-    # Cost estimate using Claude pricing
-    # Sonnet: $3/MTok input, $15/MTok output
-    # Opus: $15/MTok input, $75/MTok output (assume mix, use higher)
-    # Cache writes cost same as input, cache reads are 90% cheaper
-    input_cost = (totals['input_tokens'] + totals['cache_creation']) * 10 / 1_000_000
-    output_cost = totals['output_tokens'] * 30 / 1_000_000
-    cache_read_cost = totals['cache_read'] * 1 / 1_000_000
-    totals['cost_estimate'] = input_cost + output_cost + cache_read_cost
+    _save_checkpoint({
+        'version': CLAUDE_CHECKPOINT_VERSION,
+        'messages': checkpoint_messages,
+        'sessions': sorted(known_sessions),
+        'totals': totals,
+        'baseline': checkpoint.get('baseline') or _checkpoint_baseline(
+            'checkpoint_totals', totals, cached, visible_messages
+        ),
+    })
 
     return totals
 
@@ -449,14 +842,16 @@ def get_github_stats(username="scttbnsn"):
     return merge_with_cache(live_stats, cached.get('github') if cached else None, 'github')
 
 
-def save_stats_cache(claude_stats, github_stats):
+def save_stats_cache(claude_stats, github_stats, token_usage_stats=None):
     """Save stats to cache file."""
     cache_dir = Path(__file__).parent / "cache"
     cache_dir.mkdir(exist_ok=True)
+    token_usage_stats = token_usage_stats or claude_stats
 
     cache_data = {
         'timestamp': datetime.now().isoformat(),
         'claude': claude_stats,
+        'token_usage': token_usage_stats,
         'github': github_stats,
     }
 
@@ -657,10 +1052,11 @@ if __name__ == "__main__":
     if fetch or save:
         # Get fresh stats
         claude = get_claude_stats()
+        token_usage = get_token_usage_stats(claude)
         github = get_github_stats()
 
         if save:
-            save_stats_cache(claude, github)
+            save_stats_cache(claude, github, token_usage)
             print("Stats cached to cache/stats.json")
 
     print(render_nfo(fetch_github=fetch))
