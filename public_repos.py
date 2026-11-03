@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Live star counts and the 3x3 grid lines for the [ PUBLIC ] section of the card."""
+"""Live star counts and the 3x3 grid data for the PUBLIC section of the card."""
 
 import json
 import os
@@ -21,11 +21,6 @@ REPOS = [
     ("CodesWhat/dilated", "macos", "keeps Mac awake"),
 ]
 CATEGORIES = [("docker", "DOCKER"), ("agents", "AGENTS + AI"), ("macos", "MACOS")]
-
-HEADER = "[ PUBLIC ] ............................................................... open source"
-CELL_WIDTH = 30
-
-_memo = None
 
 
 def _load_cache(path=None):
@@ -86,37 +81,3 @@ def grid_columns(stars):
         items.sort(key=lambda t: -(t[1] if t[1] is not None else -1))
         cols.append(items)
     return cols
-
-
-def build_lines(stars):
-    """Card lines (text, color, spacing). Grid rows are '__SEG__' + JSON [(text, class)]."""
-    def seg(parts):
-        return ("__SEG__" + json.dumps(parts), "gray", "normal")
-
-    blank = ("", "text", "blank")
-    cw = CELL_WIDTH
-    out = [(HEADER, "green", "normal"), blank]
-    out.append(seg([(f"  {label:<{cw - 2}}", "orange") for _, label in CATEGORIES]))
-    out.append(blank)
-    cols = grid_columns(stars)
-    for i in range(max(len(c) for c in cols)):
-        top, bot = [], []
-        for col in cols:
-            name, n, desc = col[i]
-            star = f"★{n}" if n is not None else ""
-            pad = max(cw - 2 - len(name) - (1 + len(star) if star else 0), 0)
-            top.append(("  " + name + (" " if star else ""), "text"))
-            if star:
-                top.append((star, "yellow"))
-            top.append((" " * pad, "gray"))
-            bot.append((f"  {desc:<{cw - 2}}", "gray"))
-        out += [seg(top), seg(bot), blank]
-    return out
-
-
-def public_lines():
-    """Fetch once per process, then build the section lines."""
-    global _memo
-    if _memo is None:
-        _memo = get_stars()
-    return build_lines(_memo)

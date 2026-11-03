@@ -1,0 +1,127 @@
+[
+ {
+  "name": "TypeScript",
+  "bytes": 38613695,
+  "color": "#3178c6"
+ },
+ {
+  "name": "JavaScript",
+  "bytes": 16814998,
+  "color": "#f1e05a"
+ },
+ {
+  "name": "Go",
+  "bytes": 12627956,
+  "color": "#00ADD8"
+ },
+ {
+  "name": "Python",
+  "bytes": 10359215,
+  "color": "#3572A5"
+ },
+ {
+  "name": "Swift",
+  "bytes": 8694518,
+  "color": "#F05138"
+ },
+ {
+  "name": "Shell",
+  "bytes": 3261178,
+  "color": "#89e051"
+ },
+ {
+  "name": "GDScript",
+  "bytes": 2370898,
+  "color": "#355570"
+ },
+ {
+  "name": "Vue",
+  "bytes": 1363346,
+  "color": "#41b883"
+ },
+ {
+  "name": "CSS",
+  "bytes": 874852,
+  "color": "#663399"
+ },
+ {
+  "name": "QML",
+  "bytes": 475896,
+  "color": "#44a51c"
+ },
+ {
+  "name": "Metal",
+  "bytes": 30610,
+  "color": "#8f14e9"
+ },
+ {
+  "name": "Gherkin",
+  "bytes": 30145,
+  "color": "#5B2063"
+ },
+ {
+  "name": "Dockerfile",
+  "bytes": 25012,
+  "color": "#384d54"
+ },
+ {
+  "name": "Objective-C++",
+  "bytes": 20124,
+  "color": "#6866fb"
+ },
+ {
+  "name": "C",
+  "bytes": 12070,
+  "color": "#555555"
+ },
+ {
+  "name": "Ruby",
+  "bytes": 10183,
+  "color": "#701516"
+ },
+ {
+  "name": "GDShader",
+  "bytes": 9686,
+  "color": "#478CBF"
+ },
+ {
+  "name": "PLpgSQL",
+  "bytes": 9380,
+  "color": "#336790"
+ },
+ {
+  "name": "jq",
+  "bytes": 4117,
+  "color": "#c7254e"
+ },
+ {
+  "name": "C++",
+  "bytes": 3572,
+  "color": "#f34b7d"
+ },
+ {
+  "name": "Go Template",
+  "bytes": 3362,
+  "color": "#00ADD8"
+ },
+ {
+  "name": "Objective-C",
+  "bytes": 3270,
+  "color": "#438eff"
+ },
+ {
+  "name": "Awk",
+  "bytes": 2412,
+  "color": "#c30e9b"
+ },
+ {
+  "name": "Lua",
+  "bytes": 1493,
+  "color": "#000080"
+ },
+ {
+  "name": "Batchfile",
+  "bytes": 1006,
+  "color": "#C1F12E"
+ }
+]
