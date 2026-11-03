@@ -43,9 +43,9 @@ AREA51 = [
 LANG_SCOPE_NOTE = "all repos"
 
 CSS = """
-.r{animation:show .01s steps(1) both}
+.r{}
 @keyframes show{from{opacity:0}to{opacity:1}}
-.type{animation:type var(--dur) steps(var(--n),end) both}
+.type{}
 @keyframes type{from{width:0}to{width:var(--w)}}
 .mv{opacity:0;animation:mv var(--dur) steps(var(--n),end) forwards, vis calc(var(--dur) + .25s) steps(1) forwards;animation-delay:var(--d),var(--d)}
 @keyframes mv{from{transform:translateX(0)}to{transform:translateX(var(--w))}}
