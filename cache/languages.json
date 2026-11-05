@@ -1,12 +1,12 @@
 [
  {
   "name": "TypeScript",
-  "bytes": 38687403,
+  "bytes": 38689506,
   "color": "#3178c6"
  },
  {
   "name": "JavaScript",
-  "bytes": 17005268,
+  "bytes": 16997029,
   "color": "#f1e05a"
  },
  {
@@ -26,12 +26,12 @@
  },
  {
   "name": "Shell",
-  "bytes": 3326210,
+  "bytes": 3359546,
   "color": "#89e051"
  },
  {
   "name": "GDScript",
-  "bytes": 2386508,
+  "bytes": 2389736,
   "color": "#355570"
  },
  {
@@ -41,7 +41,7 @@
  },
  {
   "name": "CSS",
-  "bytes": 882275,
+  "bytes": 878770,
   "color": "#663399"
  },
  {
