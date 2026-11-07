@@ -1,12 +1,12 @@
 [
  {
   "name": "TypeScript",
-  "bytes": 38719446,
+  "bytes": 38803829,
   "color": "#3178c6"
  },
  {
   "name": "JavaScript",
-  "bytes": 16997034,
+  "bytes": 16999935,
   "color": "#f1e05a"
  },
  {
@@ -16,17 +16,17 @@
  },
  {
   "name": "Python",
-  "bytes": 10522862,
+  "bytes": 10524933,
   "color": "#3572A5"
  },
  {
   "name": "Swift",
-  "bytes": 9056032,
+  "bytes": 9186732,
   "color": "#F05138"
  },
  {
   "name": "Shell",
-  "bytes": 3359962,
+  "bytes": 3360574,
   "color": "#89e051"
  },
  {
@@ -41,7 +41,7 @@
  },
  {
   "name": "CSS",
-  "bytes": 878741,
+  "bytes": 878831,
   "color": "#663399"
  },
  {
