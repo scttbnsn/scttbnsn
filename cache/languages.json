@@ -1,7 +1,7 @@
 [
  {
   "name": "TypeScript",
-  "bytes": 38863378,
+  "bytes": 38890512,
   "color": "#3178c6"
  },
  {
@@ -16,7 +16,7 @@
  },
  {
   "name": "Python",
-  "bytes": 10547947,
+  "bytes": 10555716,
   "color": "#3572A5"
  },
  {
@@ -26,12 +26,12 @@
  },
  {
   "name": "Shell",
-  "bytes": 3383264,
+  "bytes": 3389671,
   "color": "#89e051"
  },
  {
   "name": "GDScript",
-  "bytes": 2918162,
+  "bytes": 3211411,
   "color": "#355570"
  },
  {
@@ -41,7 +41,7 @@
  },
  {
   "name": "CSS",
-  "bytes": 884774,
+  "bytes": 885525,
   "color": "#663399"
  },
  {
@@ -71,7 +71,7 @@
  },
  {
   "name": "GDShader",
-  "bytes": 12317,
+  "bytes": 13706,
   "color": "#478CBF"
  },
  {
