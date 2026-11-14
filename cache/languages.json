@@ -1,17 +1,17 @@
 [
  {
   "name": "TypeScript",
-  "bytes": 38934733,
+  "bytes": 39123211,
   "color": "#3178c6"
  },
  {
   "name": "JavaScript",
-  "bytes": 17021302,
+  "bytes": 17022846,
   "color": "#f1e05a"
  },
  {
   "name": "Go",
-  "bytes": 12704669,
+  "bytes": 12707634,
   "color": "#00ADD8"
  },
  {
@@ -21,12 +21,12 @@
  },
  {
   "name": "Python",
-  "bytes": 8914829,
+  "bytes": 9036838,
   "color": "#3572A5"
  },
  {
   "name": "Shell",
-  "bytes": 3389040,
+  "bytes": 3390455,
   "color": "#89e051"
  },
  {
@@ -41,7 +41,7 @@
  },
  {
   "name": "CSS",
-  "bytes": 885525,
+  "bytes": 885602,
   "color": "#663399"
  },
  {
