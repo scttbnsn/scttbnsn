@@ -1,32 +1,32 @@
 [
  {
   "name": "TypeScript",
-  "bytes": 39515576,
+  "bytes": 40610267,
   "color": "#3178c6"
  },
  {
   "name": "JavaScript",
-  "bytes": 17105057,
+  "bytes": 17417846,
   "color": "#f1e05a"
  },
  {
   "name": "Go",
-  "bytes": 12726560,
+  "bytes": 12866457,
   "color": "#00ADD8"
  },
  {
   "name": "Swift",
-  "bytes": 9358528,
+  "bytes": 9456223,
   "color": "#F05138"
  },
  {
   "name": "Python",
-  "bytes": 9055149,
+  "bytes": 9071651,
   "color": "#3572A5"
  },
  {
   "name": "Shell",
-  "bytes": 3447366,
+  "bytes": 3494631,
   "color": "#89e051"
  },
  {
@@ -36,12 +36,12 @@
  },
  {
   "name": "Vue",
-  "bytes": 1363706,
+  "bytes": 1386727,
   "color": "#41b883"
  },
  {
   "name": "CSS",
-  "bytes": 885694,
+  "bytes": 881886,
   "color": "#663399"
  },
  {
@@ -56,7 +56,7 @@
  },
  {
   "name": "Gherkin",
-  "bytes": 30145,
+  "bytes": 30135,
   "color": "#5B2063"
  },
  {
