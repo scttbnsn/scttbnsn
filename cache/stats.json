@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-11-21T23:30:42.704255",
+  "timestamp": "2026-11-22T04:12:15.352291",
   "claude": {
     "input_tokens": 113615222,
     "output_tokens": 850403176,
@@ -11,14 +11,14 @@
     "cost_estimate": 278125.42537199997
   },
   "token_usage": {
-    "input_tokens": 437953149,
-    "output_tokens": 907519456,
+    "input_tokens": 445242392,
+    "output_tokens": 908116819,
     "cache_creation": 6629815143,
-    "cache_read": 202050341130,
-    "total_tokens": 210025628878,
+    "cache_read": 202263654026,
+    "total_tokens": 210246828380,
     "sessions": 18126,
     "messages": 1504096,
-    "cost_estimate": 283202.86067688,
+    "cost_estimate": 283245.72676828,
     "providers": {
       "claude": {
         "input_tokens": 113615222,
@@ -31,14 +31,14 @@
         "cost_estimate": 278125.42537199997
       },
       "other": {
-        "input_tokens": 324337927,
-        "output_tokens": 57116280,
+        "input_tokens": 331627170,
+        "output_tokens": 57713643,
         "cache_creation": 0,
-        "cache_read": 16871314688,
-        "total_tokens": 17252768895,
+        "cache_read": 17084627584,
+        "total_tokens": 17473968397,
         "sessions": 0,
         "messages": 0,
-        "cost_estimate": 5077.435304880003
+        "cost_estimate": 5120.301396280002
       }
     }
   },
@@ -49,7 +49,7 @@
     "followers": 6,
     "following": 0,
     "contributed_repos": 104,
-    "prs": 5075,
+    "prs": 5076,
     "issues": 180,
     "loc_added": 63138125,
     "loc_deleted": 56452275,
