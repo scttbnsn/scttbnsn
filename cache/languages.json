@@ -1,38 +1,38 @@
 [
  {
   "name": "TypeScript",
-  "bytes": 40611072,
+  "bytes": 37053121,
   "color": "#3178c6"
  },
  {
   "name": "JavaScript",
-  "bytes": 17417846,
+  "bytes": 18128593,
   "color": "#f1e05a"
  },
  {
   "name": "Go",
-  "bytes": 12866457,
+  "bytes": 13222451,
   "color": "#00ADD8"
  },
  {
   "name": "Swift",
-  "bytes": 9456223,
+  "bytes": 10048588,
   "color": "#F05138"
  },
  {
   "name": "Python",
-  "bytes": 9071651,
+  "bytes": 9120328,
   "color": "#3572A5"
  },
  {
-  "name": "Shell",
-  "bytes": 3494631,
-  "color": "#89e051"
+  "name": "GDScript",
+  "bytes": 3699761,
+  "color": "#355570"
  },
  {
-  "name": "GDScript",
-  "bytes": 3447101,
-  "color": "#355570"
+  "name": "Shell",
+  "bytes": 3518387,
+  "color": "#89e051"
  },
  {
   "name": "Vue",
@@ -41,7 +41,7 @@
  },
  {
   "name": "CSS",
-  "bytes": 881886,
+  "bytes": 849511,
   "color": "#663399"
  },
  {
@@ -51,7 +51,7 @@
  },
  {
   "name": "Metal",
-  "bytes": 36603,
+  "bytes": 38126,
   "color": "#8f14e9"
  },
  {
@@ -66,12 +66,12 @@
  },
  {
   "name": "Objective-C++",
-  "bytes": 20669,
+  "bytes": 27464,
   "color": "#6866fb"
  },
  {
   "name": "GDShader",
-  "bytes": 13956,
+  "bytes": 14635,
   "color": "#478CBF"
  },
  {
@@ -81,13 +81,8 @@
  },
  {
   "name": "Ruby",
-  "bytes": 10339,
+  "bytes": 10361,
   "color": "#701516"
- },
- {
-  "name": "PLpgSQL",
-  "bytes": 9380,
-  "color": "#336790"
  },
  {
   "name": "jq",
@@ -96,7 +91,7 @@
  },
  {
   "name": "C++",
-  "bytes": 3572,
+  "bytes": 4059,
   "color": "#f34b7d"
  },
  {
