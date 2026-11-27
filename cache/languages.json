@@ -1,37 +1,37 @@
 [
  {
   "name": "TypeScript",
-  "bytes": 37118861,
+  "bytes": 37181060,
   "color": "#3178c6"
  },
  {
   "name": "JavaScript",
-  "bytes": 18251818,
+  "bytes": 18320994,
   "color": "#f1e05a"
  },
  {
   "name": "Go",
-  "bytes": 13448850,
+  "bytes": 13623592,
   "color": "#00ADD8"
  },
  {
   "name": "Swift",
-  "bytes": 10212109,
+  "bytes": 10376119,
   "color": "#F05138"
  },
  {
   "name": "Python",
-  "bytes": 9178112,
+  "bytes": 10177051,
   "color": "#3572A5"
  },
  {
   "name": "GDScript",
-  "bytes": 3707194,
+  "bytes": 3925844,
   "color": "#355570"
  },
  {
   "name": "Shell",
-  "bytes": 3530797,
+  "bytes": 3582678,
   "color": "#89e051"
  },
  {
@@ -41,7 +41,7 @@
  },
  {
   "name": "CSS",
-  "bytes": 849511,
+  "bytes": 849777,
   "color": "#663399"
  },
  {
@@ -61,7 +61,7 @@
  },
  {
   "name": "Dockerfile",
-  "bytes": 27602,
+  "bytes": 27798,
   "color": "#384d54"
  },
  {
@@ -81,7 +81,7 @@
  },
  {
   "name": "Ruby",
-  "bytes": 10361,
+  "bytes": 10748,
   "color": "#701516"
  },
  {
