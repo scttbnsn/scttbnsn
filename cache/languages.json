@@ -1,27 +1,27 @@
 [
  {
   "name": "TypeScript",
-  "bytes": 37100498,
+  "bytes": 37118861,
   "color": "#3178c6"
  },
  {
   "name": "JavaScript",
-  "bytes": 18145274,
+  "bytes": 18251818,
   "color": "#f1e05a"
  },
  {
   "name": "Go",
-  "bytes": 13233782,
+  "bytes": 13448850,
   "color": "#00ADD8"
  },
  {
   "name": "Swift",
-  "bytes": 10048588,
+  "bytes": 10212109,
   "color": "#F05138"
  },
  {
   "name": "Python",
-  "bytes": 9148679,
+  "bytes": 9178112,
   "color": "#3572A5"
  },
  {
@@ -31,7 +31,7 @@
  },
  {
   "name": "Shell",
-  "bytes": 3520876,
+  "bytes": 3530797,
   "color": "#89e051"
  },
  {
@@ -118,5 +118,10 @@
   "name": "Batchfile",
   "bytes": 1006,
   "color": "#C1F12E"
+ },
+ {
+  "name": "CodeQL",
+  "bytes": 155,
+  "color": "#140f46"
  }
 ]
