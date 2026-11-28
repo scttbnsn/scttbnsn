@@ -1,18 +1,18 @@
 [
  {
   "name": "TypeScript",
-  "bytes": 37181060,
+  "bytes": 36189390,
   "color": "#3178c6"
  },
  {
-  "name": "JavaScript",
-  "bytes": 18320994,
-  "color": "#f1e05a"
+  "name": "Go",
+  "bytes": 13640926,
+  "color": "#00ADD8"
  },
  {
-  "name": "Go",
-  "bytes": 13623592,
-  "color": "#00ADD8"
+  "name": "JavaScript",
+  "bytes": 12623037,
+  "color": "#f1e05a"
  },
  {
   "name": "Swift",
@@ -21,27 +21,27 @@
  },
  {
   "name": "Python",
-  "bytes": 10177051,
+  "bytes": 10363972,
   "color": "#3572A5"
  },
  {
   "name": "GDScript",
-  "bytes": 3925844,
+  "bytes": 4043727,
   "color": "#355570"
  },
  {
   "name": "Shell",
-  "bytes": 3582678,
+  "bytes": 3626375,
   "color": "#89e051"
  },
  {
   "name": "Vue",
-  "bytes": 1386727,
+  "bytes": 1363706,
   "color": "#41b883"
  },
  {
   "name": "CSS",
-  "bytes": 849777,
+  "bytes": 733159,
   "color": "#663399"
  },
  {
@@ -56,12 +56,12 @@
  },
  {
   "name": "Gherkin",
-  "bytes": 30135,
+  "bytes": 30145,
   "color": "#5B2063"
  },
  {
   "name": "Dockerfile",
-  "bytes": 27798,
+  "bytes": 28178,
   "color": "#384d54"
  },
  {
@@ -71,7 +71,7 @@
  },
  {
   "name": "GDShader",
-  "bytes": 14635,
+  "bytes": 16271,
   "color": "#478CBF"
  },
  {
